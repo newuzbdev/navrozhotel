@@ -37,6 +37,7 @@ import {
               <AccordionTrigger className="flex justify-between hover:no-underline">
                 <span className="text-base font-medium">
                   Mehmonxonaga kirish va chiqish vaqtlari qanday?
+                  
                 </span>
               </AccordionTrigger>
               <AccordionContent className="pt-4">

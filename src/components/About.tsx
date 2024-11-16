@@ -59,7 +59,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className=" w-full overflow-hidden mx-24 flex items-center justify-center bg-white " id="aboutus">
+    <div className=" w-full overflow-hidden mx-24  bg-white " id="aboutus">
       <div className="flex flex-col items-center text-center space-y-4 p-8">
         <img
           src={"/images/aboutus1.svg"}
@@ -109,6 +109,8 @@ export default function AboutUs() {
             <img
               src={slides[currentSlide].image}
               alt="Navroz Hotel"
+              width={1440}
+              height={810}
               className="object-cover"
             />
             <div className="absolute inset-0 bg-black/20" />

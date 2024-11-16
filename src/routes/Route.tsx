@@ -1,6 +1,8 @@
 // import { Layout } from "@/components/layout/Layout";
 import Home from "@/page/Home";
-import Vip from "@/page/Vip";
+import Rooms from "@/page/Rooms";
+import React from "react";
+const Vip = React.lazy(() => import("@/components/VipRoom"));
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -11,6 +13,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/rooms",
+        element: <Rooms />,
       },
       {
         path: "/vip",

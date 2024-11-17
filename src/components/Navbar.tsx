@@ -44,7 +44,7 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   const NavLinks = () => (
-    <nav className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+    <nav className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
       {[
         { href: "/", label: "Asosiy" },
         { href: "/rooms", label: "Xonalar" },
@@ -79,17 +79,17 @@ export default function Navbar() {
         isNavbarVisible ? "top-0" : "-top-[175px]"
       } fixed left-0 right-0 z-50 bg-white bg-opacity-20 backdrop-blur-md transition-transform duration-300`}
     >
-      <div className="flex flex-wrap items-center justify-between px-4 py-3 md:py-2 mx-24">
+      <div className="flex flex-wrap items-center justify-between px-4 py-3 mx-24 md:py-2">
         {/* Left Side */}
         <div className="flex items-center gap-2 md:gap-4 ">
-          <span className="text-white bg-blue-500 p-2 md:p-3 rounded-full md:flex items-center gap-1 hidden">
+          <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full md:p-3 md:flex">
             <Phone size={20} />
             <span className="hidden md:block">+998(50)005-07-68</span>
           </span>
         </div>
 
-        <div className="hidden md:flex items-center space-x-4 md:space-x-10 text-gray-300">
-          <p className="text-lg md:text-xl text-white">s i n c e 2 0 2 4</p>
+        <div className="items-center hidden space-x-4 text-gray-300 md:flex md:space-x-10">
+          <p className="text-lg text-white md:text-xl">s i n c e 2 0 2 4</p>
           <img
             src={"/images/navrozlogo.svg"}
             alt="logo"
@@ -104,10 +104,10 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <MapPin size={20} className="text-white hidden md:block" />
+          <MapPin size={20} className="hidden text-white md:block" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Globe size={20} className="text-white hidden md:block" />
+              <Globe size={20} className="hidden text-white md:block" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>Tilni ozgartirish</DropdownMenuLabel>
@@ -118,15 +118,15 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/booking">
-            <Button className="text-white bg-blue-500 px-3 py-1 md:px-6 md:py-6 rounded-full text-[14px] md:text-[16px] hidden md:flex">
+            <Button className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 md:px-7 md:py-6 rounded-full text-[14px] md:text-[16px] hidden md:flex">
               Band qilish
             </Button>
           </Link>
           <Sheet>
             <SheetTrigger asChild>
-              <Menu size={32} className="text-white md:hidden cursor-pointer absolute right-0 top-0" />
+              <Menu size={32} className="absolute top-0 right-0 text-white cursor-pointer md:hidden" />
             </SheetTrigger>
-            <SheetContent className="bg-white bg-opacity-90 text-gray-900 p-4">
+            <SheetContent className="p-4 text-gray-900 bg-white bg-opacity-90">
               <SheetHeader>
                 <SheetTitle className="text-xl font-bold">
                   Navroz Hotel
@@ -187,7 +187,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="hidden md:flex items-center justify-center border-t border-b w-full h-12">
+      <div className="items-center justify-center hidden w-full h-12 border-t border-b md:flex">
         <NavLinks />
       </div>
     </div>

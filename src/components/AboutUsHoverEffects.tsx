@@ -15,7 +15,7 @@ export default function AboutUsHoverEffects() {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mx-4 sm:mx-4 md:mx-4 lg:mx-24">
+      <div className="grid grid-cols-1 gap-4 mx-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 sm:mx-4 md:mx-4 lg:mx-24">
         {[
           { title: "Xonalar", image: "/images/rooms/navrozviproom.jpg" },
           { title: "Bassen", image: "/images/poolnavroz.jpg" },
@@ -25,7 +25,7 @@ export default function AboutUsHoverEffects() {
             key={index}
             className="relative group w-full h-[300px] md:h-[400px] lg:h-[477px] flex items-center justify-center transition-all ease-in-out duration-700 overflow-hidden mb-4 md:mb-0"
           >
-            <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
               <span className="text-4xl md:text-6xl lg:text-[90px] text-blue-600 font-medium transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:translate-y-full font-[Zodiak]">
                 {item.title}
               </span>
@@ -33,21 +33,18 @@ export default function AboutUsHoverEffects() {
             <img
               src={item.image}
               alt={item.title}
-              
-              className="object-cover opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:scale-110"
+              className="object-cover w-full h-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-110"
             />
           </div>
         ))}
       </div>
-
-      {/* Button */}
       <div className="flex justify-center mt-4">
         <NavLink to={"/booking"}>
           <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32  h-12 overflow-hidden px-10">
             <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
               Band qilish
             </span>
-            <ChevronRight className="absolute transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 translate-x-5 group-hover:translate-x-0 text-white" />
+            <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
           </Button>
         </NavLink>
       </div>

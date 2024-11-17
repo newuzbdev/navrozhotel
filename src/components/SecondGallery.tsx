@@ -13,10 +13,10 @@ export default function SecondGallery() {
         {
           src: "/images/navrozmassaj.jpg",
           alt: "Sauna",
-          text: "Sauna",
+          text: "Massaj",
           button: "Band qilish",
         },
-        { src: "/images/navrozsauna.jpg", alt: "Massaj", text: "Massaj" },
+        { src: "/images/navrozsauna.jpg", alt: "Sauna", text: "Sauna" },
       ].map((item, index) => (
         <div
           key={index}
@@ -24,8 +24,13 @@ export default function SecondGallery() {
         >
           <img
             src={item.src}
+            loading="lazy"
             alt={item.alt}
-            sizes="100%"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
             className="transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -47,8 +52,10 @@ export default function SecondGallery() {
             <img
               src="/images/part3.svg"
               alt="Decoration"
-              width={68}
-              height={85}
+              style={{
+                width: '68px',
+                height: '85px'
+              }}
               className="absolute top-4 right-[280px] z-10"
             />
           )}

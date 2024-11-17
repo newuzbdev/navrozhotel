@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const AllRoomTypes = React.lazy(() => import("@/components/AllRoomTypes"));
+import AllRoomTypes from "@/components/AllRoomTypes";
 
 const slides = [
   {

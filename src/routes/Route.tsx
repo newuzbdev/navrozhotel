@@ -1,14 +1,14 @@
-// import { Layout } from "@/components/layout/Layout";
+import { Layout } from "@/components/layout/Layout";
+import Deluxe from "@/page/Deluxe";
 import Home from "@/page/Home";
 import Rooms from "@/page/Rooms";
-import React from "react";
-const Vip = React.lazy(() => import("@/components/VipRoom"));
+import Vip from "@/page/Vip";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <Layout />,
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/vip",
         element: <Vip />,
+      },
+      {
+        path: "/deluxe",
+        element: <Deluxe />,
       },
     ],
   },

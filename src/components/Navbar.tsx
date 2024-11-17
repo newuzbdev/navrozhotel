@@ -79,9 +79,9 @@ export default function Navbar() {
         isNavbarVisible ? "top-0" : "-top-[175px]"
       } fixed left-0 right-0 z-50 bg-white bg-opacity-20 backdrop-blur-md transition-transform duration-300`}
     >
-      <div className="flex flex-wrap items-center justify-between px-4 py-3 md:py-2 mx-[100]">
+      <div className="flex flex-wrap items-center justify-between px-4 py-3 md:py-2 mx-24">
         {/* Left Side */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-2 md:gap-4 ">
           <span className="text-white bg-blue-500 p-2 md:p-3 rounded-full md:flex items-center gap-1 hidden">
             <Phone size={20} />
             <span className="hidden md:block">+998(50)005-07-68</span>
@@ -118,7 +118,7 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to="/booking">
-            <Button className="text-white bg-blue-500 px-3 py-1 md:px-5 md:py-5 rounded-full text-[14px] md:text-[16px] hidden md:flex">
+            <Button className="text-white bg-blue-500 px-3 py-1 md:px-6 md:py-6 rounded-full text-[14px] md:text-[16px] hidden md:flex">
               Band qilish
             </Button>
           </Link>

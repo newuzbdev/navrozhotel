@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import "swiper/swiper-bundle.css";
 
 const slides = [
   { image: "/images/aboutimage.jpg" },
@@ -42,7 +42,12 @@ export default function Gallery() {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className="cursor-grab object-fill"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  cursor: 'grab'
+                }}
               />
             </div>
           </SwiperSlide>

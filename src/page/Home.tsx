@@ -1,15 +1,13 @@
+import AboutUs from "@/components/About";
+import AboutUsHoverEffects from "@/components/AboutUsHoverEffects";
+import ContactUs from "@/components/ContactUs";
+import Gallery from "@/components/Gallery";
 import HeroSlider from "@/components/HeroSlider";
-import React from "react";
-const AboutUs = React.lazy(() => import("@/components/About"));
-const Gallery = React.lazy(() => import("@/components/Gallery"));
-const AboutUsHoverEffects = React.lazy(
-  () => import("@/components/AboutUsHoverEffects")
-);
-const SecondGallery = React.lazy(() => import("@/components/SecondGallery"));
-const Roomstypes = React.lazy(() => import("@/components/RoomTypes"));
-const Faq = React.lazy(() => import("@/components/Question"));
-const HotelLocation = React.lazy(() => import("@/components/HotelLocation"));
-const ContactUs = React.lazy(() => import("@/components/ContactUs"));
+import HotelLocation from "@/components/HotelLocation";
+import Faq from "@/components/Question";
+import Roomstypes from "@/components/RoomTypes";
+import SecondGallery from "@/components/SecondGallery";
+
 
 export default function Home() {
   return (

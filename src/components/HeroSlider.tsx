@@ -1,7 +1,5 @@
-"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "./Navbar";
 
 const slides = [
   {
@@ -31,8 +29,9 @@ export default function HeroSlider() {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+
   const slideVariants = {
-    enter: (direction: number) => ({
+    enter: (direction:number) => ({
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
     }),
@@ -45,7 +44,7 @@ export default function HeroSlider() {
         ease: "easeInOut",
       },
     },
-    exit: (direction: number) => ({
+    exit: (direction:number) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
       opacity: 1,
@@ -57,43 +56,45 @@ export default function HeroSlider() {
   };
 
   return (
-    <>
-    <Navbar/>
-      <div className=" w-full h-screen overflow-hidden" id="home">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.div
-            key={currentSlide}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            className="absolute w-full h-full"
-          >
-            <img
-              src={slides[currentSlide].image}
-              alt="Navroz Hotel"
-              width={1000}
-              height={1200}
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 bg-black/20" />
-          </motion.div>
-        </AnimatePresence>
+    <div className="relative w-full h-screen overflow-hidden" id="home">
+      <AnimatePresence initial={false} custom={direction} mode="popLayout">
+        <motion.div
+          key={currentSlide}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="absolute w-full h-full"
+        >
+          <img
+            src={slides[currentSlide].image}
+            alt="Navroz Hotel"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              position: 'absolute',
+              top: 0,
+              left: 0
+            }}
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </motion.div>
+      </AnimatePresence>
 
-        {/* Fixed text in the center of the screen */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
-          <h2 className="font-['Zodiak'] text-6xl sm:text-6xl md:text-7xl lg:text-[100px] lg:leading-[90px] font-normal tracking-widest">
-            NAVROZ
-            <p className="pt-3 text-6xl sm:text-6xl md:text-7xl lg:text-[100px]">
-              Hotel
-            </p>
-          </h2>
-          <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
-            Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
+      {/* Fixed text in the center of the screen */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
+        <h2 className="font-['Zodiak'] text-6xl sm:text-6xl md:text-7xl lg:text-[100px] lg:leading-[90px] font-normal tracking-widest">
+          NAVROZ
+          <p className="pt-3 text-6xl sm:text-6xl md:text-7xl lg:text-[100px]">
+            Hotel
           </p>
-        </div>
+        </h2>
+        <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
+          Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
+        </p>
       </div>
-    </>
+    </div>
   );
 }

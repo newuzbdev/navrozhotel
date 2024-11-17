@@ -1,20 +1,20 @@
 import  { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import VipRoom from "@/components/VipRoom";
+import DeluxeRoom from "@/components/DeluxeRoom";
 
 const slides = [
   {
-    image: "/images/rooms/navrozviproom.jpg",
+    image: "/images/rooms/navrozdeluxe.jpg",
   },
   {
-    image: "/images/rooms/navrozvipbaths.jpg",
+    image: "/images/rooms/navrozdeluxebath.jpg",
   },
   {
-    image: "/images/rooms/navrozvipall1.jpg",
+    image: "/images/rooms/deluxe.jpg",
   },
 ];
 
-export default function Vip() {
+export default function Deluxe() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -71,15 +71,15 @@ export default function Vip() {
             <img
               src={slides[currentSlide].image}
               alt="Navroz Hotel"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
             <div className="absolute inset-0 bg-black/20" />
           </motion.div>
         </AnimatePresence>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
-            Vip
-            <p className="pt-6 text-4xl sm:text-4xl md:text-4xl lg:text-[90px] font-[Zodiak]">
+            Deluxe
+            <p className="pt-3 text-lg sm:text-xl md:text-2xl lg:text-5xl font-[Zodiak]">
               Xona
             </p>
           </h2>
@@ -89,7 +89,7 @@ export default function Vip() {
         </div>
       </div>
       <div>
-        <VipRoom />
+        <DeluxeRoom/>
       </div>
     </>
   );

@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-
+import {  CardContent } from "@/components/ui/card";
 
 interface Room {
   id: number;
@@ -55,7 +54,7 @@ export default function Roomstypes() {
   ];
 
   return (
-    <div className="mx-auto py-8 ">
+    <div className="py-8 mx-auto ">
       <h1
         className="text-4xl font-normal text-center mb-8 font-[Zodiak] mt-10"
         style={{ color: "rgba(19, 99, 222, 1)" }}
@@ -64,16 +63,15 @@ export default function Roomstypes() {
       </h1>
 
       {/* First Two Rooms in 2 Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-4 sm:mx-4 md:mx-4 lg:mx-24">
+      <div className="grid grid-cols-1 gap-6 mx-4 md:grid-cols-2 sm:mx-4 md:mx-4 lg:mx-24">
         {rooms.slice(0, 2).map((room) => (
-            <NavLink to={`/${room.slug}`} key={room.id}>
-              <div className="group overflow-hidden cursor-pointer">
-                <div className="p-0 relative aspect-[4/3]">
+            <a href={`/${room.slug}`} key={room.id}>
+              <div className="overflow-hidden cursor-pointer group">
+                <CardContent className="p-0 relative aspect-[4/3]">
                   <img
                     src={room.imageUrl}
                     alt={room.title}
-                    width={'100%'}
-                    className="object-cover transition-transform duration-700 group-hover:scale-125"
+                    className="absolute object-cover w-full h-full transition-transform duration-700 group-hover:scale-125"
                   />
                   <div className="absolute inset-0">
                     <div className="absolute bottom-4 left-4">
@@ -85,19 +83,23 @@ export default function Roomstypes() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </CardContent>
               </div>
-            </NavLink>
+            </a>
           ))}
       </div>
 
       {/* Remaining Rooms in 4 Columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8 mx-4 sm:mx-4 md:mx-4 lg:mx-24">
+      <div className="grid grid-cols-1 gap-6 mx-4 mt-8 sm:grid-cols-2 md:grid-cols-4 sm:mx-4 md:mx-4 lg:mx-24">
         {rooms.slice(2).map((room) => (
-            <NavLink to={`/${room.slug}`} key={room.id}>
-              <div className="group overflow-hidden cursor-pointer">
-                <div className="p-0 relative aspect-[4/3]">
-               
+            <a href={`/${room.slug}`} key={room.id}>
+              <div className="overflow-hidden cursor-pointer group">
+                <CardContent className="p-0 relative aspect-[4/3]">
+                  <img
+                    src={room.imageUrl}
+                    alt={room.title}
+                    className="absolute object-cover w-full h-full transition-transform duration-700 group-hover:scale-125"
+                  />
                   <div className="absolute inset-0">
                     <div className="absolute bottom-4 left-4">
                       <h3
@@ -111,9 +113,9 @@ export default function Roomstypes() {
                       )}
                     </div>
                   </div>
-                </div>
+                </CardContent>
               </div>
-            </NavLink>
+            </a>
           ))}
       </div>
     </div>

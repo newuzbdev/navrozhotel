@@ -12,7 +12,7 @@ import {
           <div className="flex flex-col items-center justify-end">
             <div className="flex items-center my-3">
               <h1
-                className="text-[28px] leading-[56px] font-normal sm:2xl md:2xl: lg:text-4xl"
+                className="text-[28px] leading-[56px] font-normal sm:2xl md:2xl: lg:text-[50px]"
                 style={{
                   fontFamily: "Zodiak",
                   textAlign: "left",
@@ -28,11 +28,11 @@ import {
           <Accordion
             type="single"
             collapsible
-            className=" space-y-4 pt-5 mx-4 sm:mx-4 md:mx-4 lg:mx-24"
+            className="pt-5 mx-4 space-y-4 sm:mx-4 md:mx-4 lg:mx-24"
           >
             <AccordionItem
               value="item-1"
-              className="border rounded-lg px-6 py-2 shadow-sm"
+              className="px-6 py-2 border rounded-lg shadow-sm"
             >
               <AccordionTrigger className="flex justify-between hover:no-underline">
                 <span className="text-base font-medium">
@@ -47,7 +47,7 @@ import {
             </AccordionItem>
             <AccordionItem
               value="item-2"
-              className="border rounded-lg px-6 py-2 shadow-sm"
+              className="px-6 py-2 border rounded-lg shadow-sm"
             >
               <AccordionTrigger className="flex justify-between hover:no-underline">
                 <span className="text-base font-medium">
@@ -61,7 +61,7 @@ import {
             </AccordionItem>
             <AccordionItem
               value="item-3"
-              className="border rounded-lg px-6 py-2 shadow-sm"
+              className="px-6 py-2 border rounded-lg shadow-sm"
             >
               <AccordionTrigger className="flex justify-between hover:no-underline">
                 <span className="text-base font-medium">
@@ -74,7 +74,7 @@ import {
             </AccordionItem>
             <AccordionItem
               value="item-4"
-              className="border rounded-lg px-6 py-2 shadow-sm"
+              className="px-6 py-2 border rounded-lg shadow-sm"
             >
               <AccordionTrigger className="flex justify-between hover:no-underline">
                 <span className="text-base font-normal">

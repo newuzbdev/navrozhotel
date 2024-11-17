@@ -16,16 +16,16 @@ import {
   ChevronRight,
   ShowerHead,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-export default function VipRoom() {
+export default function Vip2Room() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
-    "/images/rooms/navrozviproom.jpg",
-    "/images/rooms/navrozvipall1.jpg",
-    "/images/rooms/navrozvipbaths.jpg",
-    "/images/rooms/navrozviproom.jpg",
-    "/images/rooms/navrozvipall1.jpg",
+    "/images/rooms/navrozvip2.jpg",
+    "/images/rooms/navrozvip2room.jpg",
+    "/images/rooms/navrozvip2bath.jpg",
+    "/images/rooms/vip2room.jpg",
+    "/images/rooms/navrozvip2room.jpg",
   ];
 
   const amenities = {
@@ -34,7 +34,13 @@ export default function VipRoom() {
         { icon: <Bath size={20} />, text: "Dush" },
         {
           icon: (
-            <img src="/images/fen.svg" width={20} height={20} alt="joy namoz" />
+            <img
+              src={"/images/fen.svg"}
+              width={20}
+              height={20}
+              alt="fen"
+              loading="lazy"
+            />
           ),
           text: "Fen",
         },
@@ -46,10 +52,11 @@ export default function VipRoom() {
         {
           icon: (
             <img
-              src="/images/joynamoz.svg"
+              src={"/images/joynamoz.svg"}
               width={20}
               height={20}
               alt="joy namoz"
+              loading="lazy"
             />
           ),
           text: "Joy namoz",
@@ -81,7 +88,7 @@ export default function VipRoom() {
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-[32px]">Vip</h1>
+          <h1 className="text-[32px]">Vip ikki kishilik</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
@@ -129,19 +136,19 @@ export default function VipRoom() {
             className="text-3xl font-medium sm:text-3xl"
             style={{ color: "rgba(19, 99, 222, 1)" }}
           >
-            660 000 000 so'm{" "}
+            660 000 000 so&apos;m{" "}
             <span className="text-black text-base font-[Satoshi]">
               bir kecha
             </span>
           </p>
-          <Link to="/booking">
+          <NavLink to={"/booking"}>
             <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-10">
               <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
                 Band qilish
               </span>
               <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
             </Button>
-          </Link>
+          </NavLink>
         </div>
 
         <Dialog

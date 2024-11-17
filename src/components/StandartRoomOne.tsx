@@ -12,20 +12,18 @@ import {
   Scissors,
   Car,
   Wifi,
-  Milk,
   ChevronRight,
-  ShowerHead,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-export default function VipRoom() {
+export default function StandardRoom1() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
-    "/images/rooms/navrozviproom.jpg",
-    "/images/rooms/navrozvipall1.jpg",
-    "/images/rooms/navrozvipbaths.jpg",
-    "/images/rooms/navrozviproom.jpg",
-    "/images/rooms/navrozvipall1.jpg",
+    "/images/rooms/navrozstandart1.jpg",
+    "/images/rooms/navrozstandart1bath.jpg",
+    "/images/rooms/navorzstandart1roommirror.jpg",
+    "/images/rooms/navrozstandart1all.jpg",
+    "/images/rooms/navrozstandart1.jpg",
   ];
 
   const amenities = {
@@ -34,7 +32,13 @@ export default function VipRoom() {
         { icon: <Bath size={20} />, text: "Dush" },
         {
           icon: (
-            <img src="/images/fen.svg" width={20} height={20} alt="joy namoz" />
+            <img
+              src={"/images/fen.svg"}
+              loading="lazy"
+              width={20}
+              height={20}
+              alt="joy namoz"
+            />
           ),
           text: "Fen",
         },
@@ -46,10 +50,11 @@ export default function VipRoom() {
         {
           icon: (
             <img
-              src="/images/joynamoz.svg"
+              src={"/images/joynamoz.svg"}
               width={20}
               height={20}
               alt="joy namoz"
+              loading="lazy"
             />
           ),
           text: "Joy namoz",
@@ -65,15 +70,6 @@ export default function VipRoom() {
         { icon: <Car size={20} />, text: "Taqsi chaqirib berish" },
         { icon: <Wifi size={20} />, text: "Wi-fi" },
       ],
-      [
-        { icon: <Scissors size={20} />, text: "Shkaf" },
-        { icon: <Milk size={20} />, text: "Ichimlik suvi" },
-        { icon: <Wifi size={20} />, text: "Xalat" },
-      ],
-      [
-        { icon: <ShowerHead size={20} />, text: "Tahorat olish" },
-        { icon: <Coffee size={20} />, text: "Coffee tea" },
-      ],
     ],
   };
 
@@ -81,7 +77,7 @@ export default function VipRoom() {
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-[32px]">Vip</h1>
+          <h1 className="text-[32px]">Standart bir kishilik</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
@@ -94,7 +90,6 @@ export default function VipRoom() {
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
-                    loading="lazy"
                     src={image}
                     alt={`Room view ${index + 1}`}
                     style={{
@@ -111,8 +106,8 @@ export default function VipRoom() {
           <div className="md:col-span-6 relative h-[420px] sm:h-[500px] lg:h-[600px] xl:h-[618px]">
             <img
               src={images[0]}
-              loading="lazy"
               alt="Main room view"
+              loading="lazy"
               style={{
                 width: "100%",
                 height: "100%",
@@ -129,19 +124,19 @@ export default function VipRoom() {
             className="text-3xl font-medium sm:text-3xl"
             style={{ color: "rgba(19, 99, 222, 1)" }}
           >
-            660 000 000 so'm{" "}
+            660 000 000 so&apos;m{" "}
             <span className="text-black text-base font-[Satoshi]">
               bir kecha
             </span>
           </p>
-          <Link to="/booking">
+          <NavLink to={"/booking"}>
             <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-10">
               <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
                 Band qilish
               </span>
               <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
             </Button>
-          </Link>
+          </NavLink>
         </div>
 
         <Dialog
@@ -154,8 +149,8 @@ export default function VipRoom() {
               <div className="relative w-full h-[80vh]">
                 <img
                   src={selectedImage}
-                  loading="lazy"
                   alt="Selected room view"
+                  loading="lazy"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -167,7 +162,6 @@ export default function VipRoom() {
           </DialogContent>
         </Dialog>
 
-        {/* Amenities Section */}
         <div className="space-y-3">
           <h3 className="text-3xl font-medium">
             Sizni qanda kulayliklar kutyabdi

@@ -4,16 +4,12 @@ import Footer from "../Footer";
 
 export const Layout = () => {
   return (
-    <div className="">
-      {/* <Sidebar /> */}
-      <div className="">
-        <Navbar />
-        <>
-          <Outlet />
-        </>
-        <Footer/>
+    <>
+      <Navbar />
 
-      </div>
-    </div>
+      <Outlet />
+
+      <Footer />
+    </>
   );
 };

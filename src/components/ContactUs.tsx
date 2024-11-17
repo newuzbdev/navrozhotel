@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 export default function ContactUs() {
   return (
-    <div className="my-10 mx-4 sm:mx-4 md:mx-4 lg:mx-24 p-4" id="contactus">
-      <div className="flex gap-10 items-center my-3 justify-center ">
+    <div className="p-4 mx-4 my-10 sm:mx-4 md:mx-4 lg:mx-24" id="contactus">
+      <div className="flex items-center justify-center gap-10 my-3 ">
         <h1
           className="text-[28px] leading-[56px] font-normal font-[Zodiak] sm:2xl md:2xl lg:text-6xl"
           style={{ color: "rgba(19, 99, 222, 1)" }}
@@ -15,14 +15,13 @@ export default function ContactUs() {
         </h1>
       </div>
 
-      <p className="text-center mb-8 text-gray-700 text-base ">
+      <p className="mb-8 text-base text-center text-gray-700 ">
         Savollaringiz bormi yoki yordam kerakmi? Biz bilan bog&apos;laning - biz
         yordam berishga tayyormiz!
       </p>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid gap-8 md:grid-cols-2">
         <Card className="w-full">
-          <CardContent className="w-full h-[423px]">
-          </CardContent>
+          <CardContent className="w-full h-[42px]"></CardContent>
         </Card>
 
         <>
@@ -55,7 +54,7 @@ export default function ContactUs() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    className="rounded h-24 placeholder:text-gray-400 placeholder:text-xl"
+                    className="h-24 rounded placeholder:text-gray-400 placeholder:text-xl"
                     placeholder="+998"
                     required
                   />
@@ -76,14 +75,14 @@ export default function ContactUs() {
           </CardContent>
         </>
       </div>
-      <div className="flex flex-col-reverse md:flex-row items-center justify-end gap-4 py-4 px-6 sm:pt-10 md:pt-10 lg:pt-10">
-        <div className="flex items-center gap-2 p-3 border rounded-md shadow-md w-full md:max-w-md md:pt-4 order-2 md:order-1">
+      <div className="flex flex-col-reverse items-center justify-end gap-4 px-6 py-4 md:flex-row sm:pt-10 md:pt-10 lg:pt-10">
+        <div className="flex items-center order-2 w-full gap-2 p-3 border rounded-md shadow-md md:max-w-md md:pt-4 md:order-1">
           <input
             type="checkbox"
-            className="w-6 h-6 border-gray-300 rounded text-blue-600 focus:ring-blue-500"
+            className="w-6 h-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           />
           <span className="text-gray-700">Men robot emasman</span>
-          <div className="ml-auto flex items-center">
+          <div className="flex items-center ml-auto">
             <img
               src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
               alt="captcha"
@@ -91,14 +90,14 @@ export default function ContactUs() {
               height={20}
               className="w-10 h-10"
             />
-            <span className="ml-1 text-gray-400 text-xs">reCAPTCHA</span>
+            <span className="ml-1 text-xs text-gray-400">reCAPTCHA</span>
           </div>
         </div>
         <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32 h-12 overflow-hidden px-10 order-1 md:order-2">
           <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
             Yuborish
           </span>
-          <ChevronRight className="absolute transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 translate-x-5 group-hover:translate-x-0 text-white" />
+          <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
         </Button>
       </div>
     </div>

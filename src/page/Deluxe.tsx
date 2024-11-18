@@ -40,7 +40,7 @@ export default function Deluxe() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
@@ -49,7 +49,7 @@ export default function Deluxe() {
       x: direction < 0 ? 1000 : -1000,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.9,
         ease: "easeInOut",
       },
     }),
@@ -79,7 +79,7 @@ export default function Deluxe() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
             Deluxe
-            <p className="pt-3 text-lg sm:text-xl md:text-2xl lg:text-5xl font-[Zodiak]">
+            <p className="pt-3 text-4xl sm:text-xl md:text-2xl lg:text-[90px] font-[Zodiak]">
               Xona
             </p>
           </h2>

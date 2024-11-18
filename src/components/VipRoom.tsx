@@ -166,13 +166,11 @@ export default function VipRoom() {
             )}
           </DialogContent>
         </Dialog>
-
-        {/* Amenities Section */}
         <div className="space-y-3">
           <h3 className="text-3xl font-medium">
             Sizni qanda kulayliklar kutyabdi
           </h3>
-          <div className="flex flex-col items-center justify-start gap-20 py-4 pr-20 md:flex-row">
+          <div className="flex flex-col items-start justify-start gap-20 py-4 pr-20 sm:items-center md:flex-row">
             {amenities.roomFeatures.map((group, groupIndex) => (
               <ul key={groupIndex} className="space-y-2">
                 {group.map((item, index) => (

@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function SecondGallery() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
+    <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {[
         {
           src: "/images/navrozaviakassa.jpg",
@@ -39,12 +39,12 @@ export default function SecondGallery() {
             </h1>
           </div>
           {item.button && (
-            <div className="absolute bottom-4 sm:bottom-8 flex items-center justify-center w-full">
+            <div className="absolute flex items-center justify-center w-full bottom-4 sm:bottom-8">
               <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32  h-12 overflow-hidden px-10">
                 <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
                   Band qilish
                 </span>
-                <ChevronRight className="absolute transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 translate-x-5 group-hover:translate-x-0 text-white" />
+                <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
               </Button>
             </div>
           )}
@@ -56,7 +56,7 @@ export default function SecondGallery() {
                 width: '68px',
                 height: '85px'
               }}
-              className="absolute top-4 right-[280px] z-10"
+              className="absolute top-4 right-[250px] z-10 hidden sm:hidden md:hidden lg:flex"
             />
           )}
         </div>

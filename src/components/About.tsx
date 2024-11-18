@@ -41,7 +41,7 @@ export default function AboutUs() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
@@ -50,15 +50,15 @@ export default function AboutUs() {
       x: direction < 0 ? 1000 : -1000,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.9,
         ease: "easeInOut",
       },
     }),
   };
 
   return (
-    <div className="relative w-full  overflow-hidden" id="aboutus">
-      <div className="flex flex-col items-center text-center space-y-4 p-8">
+    <div className="relative w-full overflow-hidden" id="aboutus">
+      <div className="flex flex-col items-center p-8 space-y-4 text-center">
         <img
           src={"/images/aboutus1.svg"}
           alt="aboutus"
@@ -87,12 +87,11 @@ export default function AboutUs() {
             <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
               Band qilish
             </span>
-            <ChevronRight className="absolute transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 translate-x-5 group-hover:translate-x-0 text-white" />
+            <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
           </Button>
         </a>
       </div>
 
-      {/* Slideshow Section */}
       <div className="relative w-full h-[690px]">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div

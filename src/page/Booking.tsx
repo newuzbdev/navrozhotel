@@ -41,7 +41,7 @@ export default function Booking() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
@@ -50,7 +50,7 @@ export default function Booking() {
       x: direction < 0 ? 1000 : -1000,
       opacity: 1,
       transition: {
-        duration: 0.7,
+        duration: 0.9,
         ease: "easeInOut",
       },
     }),

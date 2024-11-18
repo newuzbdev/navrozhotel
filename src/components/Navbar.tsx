@@ -180,7 +180,7 @@ export default function Navbar() {
                         <DropdownMenuItem>Uzbek</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
-                    <span>Til o&apos;zgartirish</span>
+                    <span>Til o'zgartirish</span>
                   </div>
                 </div>
               </div>

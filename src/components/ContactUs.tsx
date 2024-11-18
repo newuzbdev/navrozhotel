@@ -20,8 +20,18 @@ export default function ContactUs() {
         yordam berishga tayyormiz!
       </p>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
-        <Card className="w-full">
-          <CardContent className="w-full h-[42px] sm:h-[32px] md:h-[36px] lg:h-[42px]"></CardContent>
+        <Card className="w-full h-[420px]">
+          <CardContent className="w-full h-full p-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2946.8876416333584!2d60.62755899999999!3d41.554849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDMzJzE3LjUiTiA2MMKwMzcnMzkuMiJF!5e0!3m2!1sen!2s!4v1625136234567!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </CardContent>
         </Card>
 
         <>
@@ -75,14 +85,14 @@ export default function ContactUs() {
           </CardContent>
         </>
       </div>
-      <div className="flex flex-col-reverse items-center justify-end gap-4 px-6 py-4 md:flex-row sm:mt-10 md:pt-10 lg:pt-10">
-        <div className="flex items-center order-2 w-full gap-2 p-3 border rounded-md shadow-md md:max-w-md md:mt-10 md:order-1">
+      <div className="flex flex-col-reverse items-center justify-end gap-4 px-6 py-4 space-x-48 md:flex-row sm:mt-10 md:pt-10 lg:pt-0">
+        <div className="flex items-center order-2 gap-6 p-3 border rounded-md md:max-w-md md:order-1">
           <input
             type="checkbox"
             className="w-6 h-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
           />
           <span className="text-gray-700">Men robot emasman</span>
-          <div className="flex items-center ml-auto">
+          <div className="flex items-center ">
             <img
               src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
               alt="captcha"
@@ -90,7 +100,7 @@ export default function ContactUs() {
               height={20}
               className="w-10 h-10"
             />
-            <span className="ml-1 text-xs text-gray-400">reCAPTCHA</span>
+            <span className="text-xs text-gray-400 ">reCAPTCHA</span>
           </div>
         </div>
         <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32 h-12 overflow-hidden px-10 order-1 md:order-2">

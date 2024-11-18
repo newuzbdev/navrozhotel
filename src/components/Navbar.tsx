@@ -80,7 +80,6 @@ export default function Navbar() {
       } fixed left-0 right-0 z-50 bg-white bg-opacity-20 backdrop-blur-md transition-transform duration-300`}
     >
       <div className="flex flex-wrap items-center justify-between px-4 py-3 mx-24 md:py-2">
-        {/* Left Side */}
         <div className="flex items-center gap-2 md:gap-4 ">
           <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full md:p-3 md:flex">
             <Phone size={20} />
@@ -89,7 +88,7 @@ export default function Navbar() {
         </div>
 
         <div className="items-center hidden space-x-4 text-gray-300 md:flex md:space-x-10">
-          <p className="text-lg text-white md:text-xl">s i n c e 2 0 2 4</p>
+          <p className="text-lg text-white md:text-xl">s i n c e 2008</p>
           <img
             src={"/images/navrozlogo.svg"}
             alt="logo"
@@ -124,7 +123,10 @@ export default function Navbar() {
           </Link>
           <Sheet>
             <SheetTrigger asChild>
-              <Menu size={32} className="absolute top-0 right-0 text-white cursor-pointer md:hidden" />
+              <Menu
+                size={32}
+                className="absolute top-0 right-0 text-white cursor-pointer md:hidden"
+              />
             </SheetTrigger>
             <SheetContent className="p-4 text-gray-900 bg-white bg-opacity-90">
               <SheetHeader>

@@ -29,7 +29,7 @@ export default function Roomstypes() {
       id: 3,
       title: "VIP ikki kishilik",
       imageUrl: "/images/rooms/navrozvip2rooms.jpg",
-      slug: "vip-two",
+      slug: "viptwo",
     },
     
     {

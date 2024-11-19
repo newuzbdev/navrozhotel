@@ -88,16 +88,18 @@ export default function Navbar() {
         </div>
 
         <div className="items-center hidden space-x-4 text-gray-300 md:flex md:space-x-10">
-          <p className="text-lg text-white md:text-xl">s i n c e 2008</p>
+          <p className="text-base white text- md:text-xl">2 0 0 8</p>
           <img
             src={"/images/navrozlogo.svg"}
             alt="logo"
             width={70}
             height={40}
           />
-          <div className="flex gap-1">
+          <div className="flex gap-2">
             <Star size={20} />
+            
             <Star size={20} />
+            
             <Star size={20} />
           </div>
         </div>

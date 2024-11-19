@@ -89,7 +89,7 @@ export default function ContactUs() {
         <div className="flex items-center order-2 gap-6 p-3 border rounded-md md:max-w-md md:order-1">
           <input
             type="checkbox"
-            className="w-6 h-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            className="w-6 h-6 text-blue-600 border-gray-900 rounded focus:ring-blue-500"
           />
           <span className="text-gray-700">Men robot emasman</span>
           <div className="flex items-center ">

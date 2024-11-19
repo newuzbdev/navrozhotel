@@ -88,7 +88,6 @@ export default function Roomstypes() {
           ))}
       </div>
 
-      {/* Remaining Rooms in 4 Columns */}
       <div className="grid grid-cols-1 gap-6 mx-4 mt-8 sm:grid-cols-2 md:grid-cols-4 sm:mx-4 md:mx-4 lg:mx-24">
         {rooms.slice(2).map((room) => (
             <a href={`/${room.slug}`} key={room.id}>

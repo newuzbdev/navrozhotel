@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="text-blue-600">Jamoladdin0831@gmail.com</div>
           </div>
           <div className="flex justify-center mt-4 space-x-5">
-            <a href="#" className="text-red-700 hover:text-red-700">
+            <a href="https://www.instagram.com/navruz_hotel" className="text-red-700 hover:cursor-pointer hover:text-red-700">
               <img src={"/images/instagram.svg"} alt="instagram" />
             </a>
             <a href="#" className="text-blue-900 hover:text-gray-700">

@@ -131,7 +131,7 @@ export default function DeluxeRoom() {
             </span>
           </p>
           <NavLink to={"/booking"}>
-            <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-10">
+            <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-16">
               <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
                 Band qilish
               </span>

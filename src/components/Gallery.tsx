@@ -2,16 +2,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 const slides = [
-  { image: "/images/aboutimage.jpg" },
   { image: "/images/poolnavroz.jpg" },
-  { image: "/images/kitchennavruz.jpg" },
-  { image: "/images/location/navrozlocation.jpg" },
+  { image: "/images/rooms/vip2room.jpg" },
+  { image: "/images/aboutimage.jpg" },
   { image: "/images/pollslider.jpg" },
+  { image: "/images/rooms/navrozvip1.jpg" },
 ];
 
 export default function Gallery() {
   return (
-    <div className="relative h-full flex flex-col items-center text-center space-y-4 p-8 my-10">
+    <div className="relative flex flex-col items-center h-full p-8 my-10 space-y-4 text-center">
       <h1 className="text-blue-500 font-[Zodiak] text-[54px] font-normal">
         Galeriya
       </h1>
@@ -38,26 +38,21 @@ export default function Gallery() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="swiper-slide flex items-center justify-center">
+            <div className="swiper-slide flex items-center justify-center h-[320px]">
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  cursor: 'grab'
-                }}
+                className="object-cover w-full h-full cursor-grab"
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Optional Marquee Text - Hidden on small screens */}
-      <div className="absolute lg:top-56 bottom-4 lg:w-full overflow-hidden hidden sm:block md:block">
+      <div className="absolute hidden overflow-hidden lg:top-56 bottom-4 lg:w-full sm:block md:block">
         <div className="animate-marquee whitespace-nowrap text-8xl font-[Satoshi]">
-          Bizning Mehmonxona galereyamiz va bizning xizmatlarimiz haqida batafsil ma'lumot.
+          Bizning Mehmonxona galereyamiz va bizning xizmatlarimiz haqida
+          batafsil ma'lumot.
         </div>
       </div>
     </div>

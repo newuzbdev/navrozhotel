@@ -62,7 +62,6 @@ export default function Roomstypes() {
         Xona tariflari
       </h1>
 
-      {/* First Two Rooms in 2 Columns */}
       <div className="grid grid-cols-1 gap-6 mx-4 md:grid-cols-2 sm:mx-4 md:mx-4 lg:mx-24">
         {rooms.slice(0, 2).map((room) => (
             <a href={`/${room.slug}`} key={room.id}>

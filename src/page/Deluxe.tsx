@@ -1,6 +1,12 @@
-import  { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import DeluxeRoom from "@/components/DeluxeRoom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+} from "swiper/modules";
 
 const slides = [
   {
@@ -15,67 +21,32 @@ const slides = [
 ];
 
 export default function Deluxe() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [direction, setDirection] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [currentSlide]);
-
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 1,
-      transition: {
-        duration: 0.9,
-        ease: "easeInOut",
-      },
-    }),
-  };
-
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.div
-            key={currentSlide}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            className="absolute w-full h-full"
-          >
-            <img
-              src={slides[currentSlide].image}
-              alt="Navroz Hotel"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-            <div className="absolute inset-0 bg-black/20" />
-          </motion.div>
-        </AnimatePresence>
+        <Swiper
+          cssMode={true}
+          mousewheel={true}
+          keyboard={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
+          className="w-full h-full"
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={slide.image}
+                alt="Navroz Hotel"
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 bg-black/20" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
             Deluxe
@@ -89,7 +60,7 @@ export default function Deluxe() {
         </div>
       </div>
       <div>
-        <DeluxeRoom/>
+        <DeluxeRoom />
       </div>
     </>
   );

@@ -172,7 +172,7 @@ export default function VipRoom() {
           </h3>
           <div className="flex flex-col items-start justify-start gap-20 py-4 pr-20 sm:items-center md:flex-row">
             {amenities.roomFeatures.map((group, groupIndex) => (
-              <ul key={groupIndex} className="space-y-4">
+              <ul key={groupIndex} className="space-y-4 ">
                 {group.map((item, index) => (
                   <li key={index} className="flex items-center gap-1">
                     {item.icon}

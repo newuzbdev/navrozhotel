@@ -33,6 +33,10 @@ export default function Navbar() {
     contactUsSection?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleMapClick = () => {
+    window.open("https://www.google.com/maps/dir/?api=1&destination=41.554849,60.627559", "_blank");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsNavbarVisible(window.scrollY < lastScrollY);
@@ -105,7 +109,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <MapPin size={20} className="hidden text-white md:block" />
+          <MapPin size={20} className="hidden text-white cursor-pointer md:block" onClick={handleMapClick} />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Globe size={20} className="hidden text-white md:block" />
@@ -166,7 +170,7 @@ export default function Navbar() {
                     <span className="text-gray-900">+998(50)005-07-68</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="text-blue-500" size={20} />
+                    <MapPin className="text-blue-500 cursor-pointer" size={20} onClick={handleMapClick} />
                     <span className="text-gray-900">Bizning manzil</span>
                   </div>
                   <div className="flex items-center gap-2">

@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import Booking from "@/page/Booking";
 import Deluxe from "@/page/Deluxe";
 import Home from "@/page/Home";
+import Kitchen from "@/page/Kitchen";
+import Pool from "@/page/Pool";
 import Rooms from "@/page/Rooms";
 import StandartRoomOne from "@/page/StandartOne";
 import StandartRoom3 from "@/page/StandartThree";
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         path: "/booking",
         element: <Booking />,
       },
+      {
+        path: "/pool",
+        element: <Pool />,
+      },
+      {
+        path: "/kitchen",
+        element: <Kitchen />,
+      }
     ],
   },
 ]);

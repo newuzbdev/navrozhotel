@@ -34,7 +34,10 @@ export default function Navbar() {
   };
 
   const handleMapClick = () => {
-    window.open("https://www.google.com/maps/dir/?api=1&destination=41.554849,60.627559", "_blank");
+    window.open(
+      "https://www.google.com/maps/dir/?api=1&destination=41.554849,60.627559",
+      "_blank"
+    );
   };
 
   useEffect(() => {
@@ -101,15 +104,19 @@ export default function Navbar() {
           />
           <div className="flex gap-2">
             <Star size={20} />
-            
+
             <Star size={20} />
-            
+
             <Star size={20} />
           </div>
         </div>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <MapPin size={20} className="hidden text-white cursor-pointer md:block" onClick={handleMapClick} />
+          <MapPin
+            size={20}
+            className="hidden text-white cursor-pointer md:block"
+            onClick={handleMapClick}
+          />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Globe size={20} className="hidden text-white md:block" />
@@ -169,8 +176,14 @@ export default function Navbar() {
                     <Phone className="text-blue-500" size={20} />
                     <span className="text-gray-900">+998(50)005-07-68</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="text-blue-500 cursor-pointer" size={20} onClick={handleMapClick} />
+                  <div
+                    className="flex items-center gap-2 hover:cursor-pointer"
+                    onClick={handleMapClick}
+                  >
+                    <MapPin
+                      className="text-blue-500 cursor-pointer"
+                      size={20}
+                    />
                     <span className="text-gray-900">Bizning manzil</span>
                   </div>
                   <div className="flex items-center gap-2">

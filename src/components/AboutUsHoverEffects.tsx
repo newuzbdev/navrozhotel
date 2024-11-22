@@ -17,25 +17,26 @@ export default function AboutUsHoverEffects() {
 
       <div className="grid grid-cols-1 gap-4 mx-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8 sm:mx-4 md:mx-4 lg:mx-24">
         {[
-          { title: "Xonalar", image: "/images/rooms/navrozviproom.jpg" },
-          { title: "Bassen", image: "/images/poolnavroz.jpg" },
-          { title: "Oshxona", image: "/images/kitchennavruz.jpg" },
+          { title: "Xonalar", image: "/images/rooms/navrozviproom.jpg", link: "/rooms" },
+          { title: "Bassen", image: "/images/poolnavroz.jpg", link: "/pool" },
+          { title: "Oshxona", image: "/images/kitchennavruz.jpg", link: "/kitchen" },
         ].map((item, index) => (
-          <div
-            key={index}
-            className="relative group w-full h-[300px] md:h-[400px] lg:h-[477px] flex items-center justify-center transition-all ease-in-out duration-700 overflow-hidden mb-4 md:mb-0"
-          >
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
-              <span className="text-4xl md:text-6xl lg:text-[90px] text-blue-600 font-medium transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:translate-y-full font-[Zodiak]">
-                {item.title}
-              </span>
+          <NavLink key={index} to={item.link}>
+            <div
+              className="relative group w-full h-[300px] md:h-[400px] lg:h-[477px] flex items-center justify-center transition-all ease-in-out duration-700 overflow-hidden mb-4 md:mb-0"
+            >
+              <div className="absolute inset-0 z-10 flex items-center justify-center">
+                <span className="text-4xl md:text-6xl lg:text-[90px] text-blue-600 font-medium transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:translate-y-full font-[Zodiak]">
+                  {item.title}
+                </span>
+              </div>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="object-cover w-full h-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-110"
+              />
             </div>
-            <img
-              src={item.image}
-              alt={item.title}
-              className="object-cover w-full h-full transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-110"
-            />
-          </div>
+          </NavLink>
         ))}
       </div>
       <div className="flex justify-center mt-4">

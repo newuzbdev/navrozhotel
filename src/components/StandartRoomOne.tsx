@@ -62,7 +62,17 @@ export default function StandardRoom1() {
       ],
       [
         { icon: <Tv size={20} />, text: "Televizor" },
-        { icon: <Bath size={20} />, text: "Sochiqlar" },
+        {
+          icon: (
+            <img
+              src="/images/rooms/HOTEL/towel1.jpg"
+              width={20}
+              height={20}
+              alt="Sochiqlar"
+            />
+          ),
+          text: "Sochiqlar",
+        },
         { icon: <Footprints size={20} />, text: "Shippaklar" },
       ],
       [

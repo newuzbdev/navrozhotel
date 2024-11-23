@@ -48,7 +48,7 @@ export default function HeroSlider() {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
         <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[100px] lg:leading-[90px] font-normal tracking-widest">
-          NAVROZ
+          NAVRO'Z
           <p className="pt-3 text-4xl sm:text-6xl md:text-7xl lg:text-[100px]">
             Hotel
           </p>

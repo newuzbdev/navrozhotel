@@ -1,33 +1,30 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { ChevronRight } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
-export default function KitchenImages() {
+export default function SaunaImages() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
-    "/images/navrozoshxona1.jpg",
-    "/images/kitchennavruz.jpg",
-    "/images/navrozoshxona2.jpg",
-    "/images/navrozoshxona3.jpg",
-    "/images/kitchen.jpg",
+    "/images/navrozsauna.jpg",
+    "/images/navrozsauna2.jpg",
+    "/images/navrozsauna.jpg",
+    "/images/navrozsauna3.jpg",
+    "/images/navrozsauna1.jpg",
   ];
 
   return (
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10">
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-center">
-          <h1 className="text-[32px] sm:text-4xl md:text-7xl lg:text-[48px] font-[Zodiak] text-blue-500">
-            Oshxona
-          </h1>
+          <h1 className="text-[32px]">Sauna</h1>
         </div>
         <div className="flex items-center justify-center">
-          <p className="font-[Satoshi] text-[16px] leading-[24px] text-center text-black sm:w-[340px] lg:w-[540px]">
-            Navro'z mehmonxonasi oshxonasi sizni dam olishga chorlaydi! Toza va
-            shinam muhitda taom zavqidan bahramand bo'ling. Qulay sharoit va
-            sifatli xizmat sizni kutmoqda.
+          {" "}
+          <p className="font-[Satoshi] text-[16px] leading-[24px] text-center sm:w-[340px] lg:w-[540px]">
+            "Navro'z mehmonxonasi massaj xizmati sizni dam olish va
+            tetiklanishga chorlaydi! Tinch va shinam muhitda professional
+            massajdan bahramand bo'ling. Qulay sharoit va sifatli xizmat sizni
+            kutmoqda."
           </p>
         </div>
 
@@ -69,17 +66,6 @@ export default function KitchenImages() {
               onClick={() => setSelectedImage(images[0])}
             />
           </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-center mt-4 sm:flex-row">
-          <NavLink to={"/booking"}>
-            <Button className="bg-white text-black transition-all duration-300 ease-out border-blue-500 hover:bg-blue-500  border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-16">
-              <span className="absolute text-blue-500 transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                Band qilish
-              </span>
-              <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
-            </Button>
-          </NavLink>
         </div>
 
         <Dialog

@@ -57,7 +57,17 @@ export default function DeluxeRoom() {
       ],
       [
         { icon: <Tv size={20} />, text: "Televizor" },
-        { icon: <Bath size={20} />, text: "Sochiqlar" },
+        {
+          icon: (
+            <img
+              src="/images/rooms/HOTEL/towel1.jpg"
+              width={20}
+              height={20}
+              alt="Sochiqlar"
+            />
+          ),
+          text: "Sochiqlar",
+        },
         { icon: <Footprints size={20} />, text: "Shippaklar" },
       ],
       [
@@ -66,7 +76,16 @@ export default function DeluxeRoom() {
         { icon: <Wifi size={20} />, text: "Wi-fi" },
       ],
       [
-        { icon: <Scissors size={20} />, text: "Shkaf" },
+        { 
+          icon: (
+            <img
+              src="/images/HOTEL/shkaf.jpg"
+              width={20}
+              height={20}
+              alt="shkaf"
+            />
+          ),text: "Shkaf" 
+          },
         { icon: <Milk size={20} />, text: "Ichimlik suvi" },
         { icon: <Shirt size={20} />, text: "Xalat" },
       ],

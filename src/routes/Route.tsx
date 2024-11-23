@@ -3,11 +3,14 @@ import Booking from "@/page/Booking";
 import Deluxe from "@/page/Deluxe";
 import Home from "@/page/Home";
 import Kitchen from "@/page/Kitchen";
+import Massage from "@/page/Massage";
 import Pool from "@/page/Pool";
 import Rooms from "@/page/Rooms";
+import Sauna from "@/page/Sauna";
 import StandartRoomOne from "@/page/StandartOne";
 import StandartRoom3 from "@/page/StandartThree";
 import StandartRoom2 from "@/page/StandartTwo";
+import Ticket from "@/page/Ticket";
 import Vip from "@/page/Vip";
 import VipOne from "@/page/VipOne";
 import VipTwo from "@/page/VipTwo";
@@ -65,7 +68,19 @@ const router = createBrowserRouter([
       {
         path: "/kitchen",
         element: <Kitchen />,
-      }
+      },
+      {
+        path: "/massage",
+        element: <Massage />,
+      },
+      {
+        path: "/ticket",
+        element: <Ticket />,
+      },
+      {
+        path: "/sauna",
+        element: <Sauna />,
+      },
     ],
   },
 ]);

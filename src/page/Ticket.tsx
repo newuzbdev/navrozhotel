@@ -1,4 +1,4 @@
-import KitchenImages from "@/components/KitchenImages";
+import TicketsInfo from "@/components/TicketsInfo";
 import {
   Autoplay,
   Navigation,
@@ -9,17 +9,17 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 const slides = [
   {
-    image: "/images/navrozoshxona3.jpg",
+    image: "/images/location/navrozmainlocation.jpg",
   },
   {
-    image: "/images/navrozoshxona2.jpg",
+    image: "/images/navrozslider3.jpg",
   },
   {
-    image: "/images/navrozoshxona1.jpg",
+    image: "/images/navrozslider.jpg",
   },
 ];
 
-export default function Kitchen() {
+export default function Ticket() {
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
@@ -48,7 +48,7 @@ export default function Kitchen() {
         </Swiper>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
-            Oshxona
+            Avia kassa
           </h2>
           <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
             Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
@@ -56,7 +56,7 @@ export default function Kitchen() {
         </div>
       </div>
       <div>
-        <KitchenImages />
+        <TicketsInfo />
       </div>
     </>
   );

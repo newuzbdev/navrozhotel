@@ -41,13 +41,13 @@ export default function Footer() {
         <div className="py-6">
           <div className="flex flex-col items-center justify-center space-y-2 md:flex-row md:space-x-10 md:space-y-0">
             <div className="flex gap-2 text-blue-600">
-              <Phone className="text-blue-500" size={20} /> +998(50) 005-07-68
+              <Phone className="text-blue-500" size={20} /> +998 68 228 49 11
             </div>
             <div className="flex space-x-2 text-blue-600">
               <MapPin className="text-blue-500" size={20} />
               Urganch sh. Nuri hayot 69
             </div>
-            <div className="text-blue-600">Jamoladdin0831@gmail.com</div>
+            <div className="text-blue-600">infonavro'zhotel/@gmail.com</div>
           </div>
           <div className="flex justify-center mt-4 space-x-5">
             <a href="https://www.instagram.com/navruz_hotel" className="text-red-700 hover:cursor-pointer hover:text-red-700">

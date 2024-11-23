@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Globe, MapPin, Phone, Star, Menu } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { MapPin, Phone, Star, Menu } from 'lucide-react';
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
   Sheet,
@@ -9,14 +9,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const location = useLocation();
@@ -84,53 +76,41 @@ export default function Navbar() {
     <div
       className={`${
         isNavbarVisible ? "top-0" : "-top-[175px]"
-      } fixed left-0 right-0 z-50 bg-white bg-opacity-20 backdrop-blur-md transition-transform duration-300`}
+      } fixed left-0 right-0 z-50 transition-transform duration-300 lg:bg-white lg:bg-opacity-20 lg:backdrop-blur-md`}
     >
-      <div className="flex flex-wrap items-center justify-between px-4 py-3 mx-24 md:py-2">
-        <div className="flex items-center gap-2 md:gap-4 ">
-          <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full md:p-3 md:flex">
+      <div className="flex flex-wrap items-center justify-between px-4 py-3 mx-4 lg:mx-24 md:py-2">
+        <div className="items-center hidden lg:flex lg:gap-4">
+          <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full lg:p-3 lg:flex">
             <Phone size={20} />
-            <span className="hidden md:block">+998(50)005-07-68</span>
+            <span className="hidden lg:block">+998(50)005-07-68</span>
           </span>
         </div>
 
-        <div className="items-center hidden space-x-4 text-gray-300 md:flex md:space-x-10">
-          <p className="text-base white text- md:text-xl">2 0 0 8</p>
-          <img
-            src={"/images/navrozlogo.svg"}
-            alt="logo"
-            width={70}
-            height={40}
-          />
+        <div className="items-center hidden space-x-4 text-gray-300 lg:flex lg:space-x-10">
+          <p className="text-base white text- lg:text-xl">2 0 0 8</p>
+          <NavLink to={"/"}>
+            <img
+              src={"/images/navrozlogo.svg"}
+              alt="logo"
+              width={70}
+              height={40}
+            />
+          </NavLink>
           <div className="flex gap-2">
             <Star size={20} />
-
             <Star size={20} />
-
             <Star size={20} />
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
           <MapPin
             size={20}
-            className="hidden text-white cursor-pointer md:block"
+            className="hidden text-white cursor-pointer lg:block"
             onClick={handleMapClick}
           />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Globe size={20} className="hidden text-white md:block" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>Tilni ozgartirish</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>English</DropdownMenuItem>
-              <DropdownMenuItem>Russian</DropdownMenuItem>
-              <DropdownMenuItem>Uzbek</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Link to="/booking">
-            <Button className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 md:px-7 md:py-6 rounded-full text-[14px] md:text-[16px] hidden md:flex">
+          <Link to="/booking" className="hidden lg:block">
+            <Button className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 lg:px-7 lg:py-6 rounded-full text-[14px] lg:text-[16px] hidden lg:flex">
               Band qilish
             </Button>
           </Link>
@@ -138,13 +118,13 @@ export default function Navbar() {
             <SheetTrigger asChild>
               <Menu
                 size={32}
-                className="absolute top-0 right-0 text-white cursor-pointer md:hidden"
+                className="absolute text-white cursor-pointer lg:hidden top-2 right-2"
               />
             </SheetTrigger>
             <SheetContent className="p-4 text-gray-900 bg-white bg-opacity-90">
               <SheetHeader>
                 <SheetTitle className="text-xl font-bold">
-                  Navroz Hotel
+                  Navro'z Hotel
                 </SheetTitle>
               </SheetHeader>
               <div className="mt-4 space-y-4">
@@ -186,21 +166,6 @@ export default function Navbar() {
                     />
                     <span className="text-gray-900">Bizning manzil</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Globe className="text-blue-500" size={20} />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent>
-                        <DropdownMenuLabel>Tilni ozgartirish</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>English</DropdownMenuItem>
-                        <DropdownMenuItem>Russian</DropdownMenuItem>
-                        <DropdownMenuItem>Uzbek</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                    <span>Til o'zgartirish</span>
-                  </div>
                 </div>
               </div>
             </SheetContent>
@@ -208,9 +173,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="items-center justify-center hidden w-full h-12 border-t border-b md:flex">
+      <div className="items-center justify-center hidden w-full h-12 border-t border-b lg:flex">
         <NavLinks />
       </div>
     </div>
   );
 }
+

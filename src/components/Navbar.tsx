@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Star, Menu } from 'lucide-react';
+import { MapPin, Phone, Star, Menu } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
@@ -82,7 +82,7 @@ export default function Navbar() {
         <div className="items-center hidden lg:flex lg:gap-4">
           <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full lg:p-3 lg:flex">
             <Phone size={20} />
-            <span className="hidden lg:block">+998(50)005-07-68</span>
+            <span className="hidden lg:block">+998 68 228 49 11</span>
           </span>
         </div>
 
@@ -154,7 +154,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-start gap-4 mt-4">
                   <div className="flex items-center gap-2">
                     <Phone className="text-blue-500" size={20} />
-                    <span className="text-gray-900">+998(50)005-07-68</span>
+                    <span className="text-gray-900">+998 68 228 49 11</span>
                   </div>
                   <div
                     className="flex items-center gap-2 hover:cursor-pointer"
@@ -179,4 +179,3 @@ export default function Navbar() {
     </div>
   );
 }
-

@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import { ChevronRight } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
 export default function KitchenImages() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -69,17 +66,6 @@ export default function KitchenImages() {
               onClick={() => setSelectedImage(images[0])}
             />
           </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-center mt-4 sm:flex-row">
-          <NavLink to={"/booking"}>
-            <Button className="bg-white text-black transition-all duration-300 ease-out border-blue-500 hover:bg-blue-500  border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-16">
-              <span className="absolute text-blue-500 transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                Band qilish
-              </span>
-              <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
-            </Button>
-          </NavLink>
         </div>
 
         <Dialog

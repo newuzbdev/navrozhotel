@@ -8,7 +8,6 @@ import Faq from "@/components/Question";
 import Roomstypes from "@/components/RoomTypes";
 import SecondGallery from "@/components/SecondGallery";
 
-
 export default function Home() {
   return (
     <>
@@ -19,7 +18,7 @@ export default function Home() {
       </div>
       <Gallery />
       <SecondGallery />
-      <div className=" my-10">
+      <div className="my-10">
         <Roomstypes />
         <Faq />
         <HotelLocation />

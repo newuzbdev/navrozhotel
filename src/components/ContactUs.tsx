@@ -3,22 +3,84 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+
 export default function ContactUs() {
+  const { toast } = useToast();
+  const [isRobot, setIsRobot] = useState(false);
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const botToken = "7583278821:AAHXt-z1Krs7H6TUUzpU_LOWRFiL_-OmKdk";
+    const chatId = "1109703005";
+
+    const messageText = `
+Yangi xabar:
+👤 Ism: ${formData.firstName}
+👥 Familya: ${formData.lastName}
+📱 Telefon: ${formData.phone}
+💬 Xabar: ${formData.message}
+    `;
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${botToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: messageText,
+            parse_mode: "HTML",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          message: "",
+        });
+        setIsRobot(false);
+        toast({
+          variant: "success",
+          title: "Muvaffaqiyatli yuborildi!",
+          description: "Sizning xabaringiz qabul qilindi.",
+        });
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Xatolik!",
+        description: "Xabar yuborishda xatolik yuz berdi.",
+      });
+    }
+  };
+
   return (
     <div className="p-4 mx-4 my-10 sm:mx-4 md:mx-4 lg:mx-24" id="contactus">
-      <div className="flex items-center justify-center gap-10 my-3 ">
-        <h1
-          className="text-[28px] leading-[56px] font-normal font-[Zodiak] sm:2xl md:2xl lg:text-6xl"
-          style={{ color: "rgba(19, 99, 222, 1)" }}
-        >
-          Biz Bilan Bog'lanish
-        </h1>
-      </div>
-
-      <p className="mb-8 text-base text-center text-gray-700 ">
-        Savollaringiz bormi yoki yordam kerakmi? Biz bilan bog'laning - biz
-        yordam berishga tayyormiz!
-      </p>
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
         <Card className="w-full h-[420px]">
           <CardContent className="w-full h-full p-0">
@@ -34,81 +96,96 @@ export default function ContactUs() {
           </CardContent>
         </Card>
 
-        <>
-          <CardContent className="h-[423px] sm:h-[380px] md:h-[400px] lg:h-[423px]">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-                <div>
-                  <Input
-                    className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[70px] placeholder:text-gray-400 placeholder:text-xl"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="Isim"
-                    required
-                  />
-                </div>
-                <div>
-                  <Input
-                    className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[76px] placeholder:text-gray-400 placeholder:text-xl"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Familya"
-                    required
-                  />
-                </div>
-              </div>
-
+        <CardContent className="h-[423px] sm:h-[380px] md:h-[400px] lg:h-[423px] mb-8">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
               <div>
-                <div className="flex">
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    className="w-full h-[56px] rounded sm:h-20 md:h-20 lg:h-24 placeholder:text-gray-400 placeholder:text-xl"
-                    placeholder="+998"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={4}
+                <Input
+                  className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[70px] placeholder:text-gray-400 placeholder:text-xl"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Isim"
                   required
-                  placeholder="Xabar"
-                  className="h-[105px] placeholder:text-gray-400 placeholder:text-xl lg:h-[205px] md:h-[150px] "
                 />
               </div>
-            </form>
-          </CardContent>
-        </>
-      </div>
-      <div className="flex flex-col-reverse items-center justify-end gap-4 px-6 py-4 space-x-48 md:flex-row sm:mt-10 md:pt-10 lg:pt-0">
-        <div className="flex items-center order-2 gap-6 p-3 border rounded-md md:max-w-md md:order-1">
-          <input
-            type="checkbox"
-            className="w-6 h-6 text-blue-600 border-gray-900 rounded focus:ring-blue-500"
-          />
-          <span className="text-gray-700">Men robot emasman</span>
-          <div className="flex items-center ">
-            <img
-              src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
-              alt="captcha"
-              width={20}
-              height={20}
-              className="w-10 h-10"
-            />
-            <span className="text-xs text-gray-400 ">reCAPTCHA</span>
-          </div>
-        </div>
-        <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32 h-12 overflow-hidden px-10 order-1 md:order-2">
-          <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-            Yuborish
-          </span>
-          <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
-        </Button>
+              <div>
+                <Input
+                  required
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[70px] placeholder:text-gray-400 placeholder:text-xl"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Familya"
+                />
+              </div>
+            </div>
+
+            <div className="relative">
+              <span className="absolute text-gray-500 transform -translate-y-1/2 left-4 top-1/2">
+                +998
+              </span>
+              <Input
+                type="tel"
+                name="phone"
+                pattern="[0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}"
+                placeholder="99 123 45 67"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+                className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[70px] pl-16 text-gray-900 placeholder:text-gray-400 placeholder:text-base"
+              />
+            </div>
+
+            <div className="flex">
+              <Textarea
+                value={formData.message}
+                onChange={handleInputChange}
+                id="message"
+                name="message"
+                rows={4}
+                required
+                placeholder="Xabar"
+                className="h-[105px] placeholder:text-gray-400 placeholder:text-xl lg:h-[225px] md:h-[150px] "
+              />
+            </div>
+
+            <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-0 lg:justify-between">
+              <div className="flex items-center w-full p-3 border rounded-md gap-9 lg:w-auto">
+                <input
+                  type="checkbox"
+                  required
+                  checked={isRobot}
+                  onChange={(e) => setIsRobot(e.target.checked)}
+                  className="w-6 h-6 text-blue-600 border-gray-900 rounded focus:ring-blue-500"
+                />
+                <span className="text-gray-700">Men robot emasman</span>
+                <div className="flex items-center ">
+                  <img
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+                    alt="captcha"
+                    width={20}
+                    height={20}
+                    className="w-10 h-10"
+                  />
+                  <span className="text-xs text-gray-400 ">reCAPTCHA</span>
+                </div>
+              </div>
+
+              <Button
+                type="submit"
+                className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32 h-12 overflow-hidden px-10"
+              >
+                <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
+                  Yuborish
+                </span>
+                <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
+              </Button>
+            </div>
+          </form>
+        </CardContent>
       </div>
     </div>
   );

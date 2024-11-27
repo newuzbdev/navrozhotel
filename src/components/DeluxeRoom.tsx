@@ -17,8 +17,11 @@ import {
   Shirt,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function DeluxeRoom() {
+  const { t } = useTranslation();
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
     "/images/rooms/navrozdeluxe.jpg",
@@ -31,32 +34,39 @@ export default function DeluxeRoom() {
   const amenities = {
     roomFeatures: [
       [
-        { icon: <Bath size={20} />, text: "Dush" },
-        {
-          icon: (
-            <img src="/images/fen.svg" width={20} height={20} alt="joy namoz" />
-          ),
-          text: "Fen",
-        },
-        { icon: <Droplets size={20} />, text: "Issiq suv" },
-      ],
-      [
-        { icon: <Refrigerator size={20} />, text: "Muzlatgich" },
-        { icon: <Coffee size={20} />, text: "Nonushta" },
+        { icon: <Bath size={20} />, text: t("shower") },
         {
           icon: (
             <img
-              src="/images/joynamoz.svg"
+              src={"/images/fen.svg"}
+              loading="lazy"
               width={20}
               height={20}
               alt="joy namoz"
             />
           ),
-          text: "Joy namoz",
+          text: t("fen"),
+        },
+        { icon: <Droplets size={20} />, text: t("hotWater") },
+      ],
+      [
+        { icon: <Refrigerator size={20} />, text: t("refrigerator") },
+        { icon: <Coffee size={20} />, text: t("breakfast") },
+        {
+          icon: (
+            <img
+              src={"/images/joynamoz.svg"}
+              width={20}
+              height={20}
+              alt="joy namoz"
+              loading="lazy"
+            />
+          ),
+          text: t("placeOfPrayer"),
         },
       ],
       [
-        { icon: <Tv size={20} />, text: "Televizor" },
+        { icon: <Tv size={20} />, text: t("television") },
         {
           icon: (
             <img
@@ -66,17 +76,17 @@ export default function DeluxeRoom() {
               alt="Sochiqlar"
             />
           ),
-          text: "Sochiqlar",
+          text: t("towels"),
         },
-        { icon: <Footprints size={20} />, text: "Shippaklar" },
+        { icon: <Footprints size={20} />, text: t("slippers") },
       ],
       [
-        { icon: <Scissors size={20} />, text: "Saqol oladigan nabor" },
-        { icon: <Car size={20} />, text: "Taqsi chaqirib berish" },
+        { icon: <Scissors size={20} />, text: t("shaver") },
+        { icon: <Car size={20} />, text: t("taxiCall") },
         { icon: <Wifi size={20} />, text: "Wi-fi" },
       ],
       [
-        { 
+        {
           icon: (
             <img
               src="/images/HOTEL/shkaf.jpg"
@@ -84,12 +94,18 @@ export default function DeluxeRoom() {
               height={20}
               alt="shkaf"
             />
-          ),text: "Shkaf" 
-          },
-        { icon: <Milk size={20} />, text: "Ichimlik suvi" },
-        { icon: <Shirt size={20} />, text: "Xalat" },
+          ),
+          text: t("closet"),
+        },
+        { icon: <Milk size={20} />, text: t("beverages") },
+        { icon: <Shirt size={20} />, text: t("robe") },
       ],
-      [{ icon: <Coffee size={20} />, text: "Coffee tea" }],
+      [
+        {
+          icon: <Coffee size={20} />,
+          text: t("coffeeTea"),
+        },
+      ],
     ],
   };
 
@@ -138,20 +154,11 @@ export default function DeluxeRoom() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between mt-4 sm:flex-row">
-          <p
-            className="text-3xl font-medium sm:text-3xl"
-            style={{ color: "rgba(19, 99, 222, 1)" }}
-          >
-            660 000 000 so'm{" "}
-            <span className="text-black text-base font-[Satoshi]">
-              bir kecha
-            </span>
-          </p>
+        <div className="flex flex-col items-center justify-end mt-4 sm:flex-row">
           <NavLink to={"/booking"}>
             <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-16">
               <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                Band qilish
+                {t("booknow")}
               </span>
               <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
             </Button>
@@ -181,9 +188,7 @@ export default function DeluxeRoom() {
         </Dialog>
 
         <div className="space-y-3">
-          <h3 className="text-3xl font-medium">
-            Sizni qanda kulayliklar kutyabdi
-          </h3>
+          <h3 className="text-3xl font-medium">{t("roomComfort")}</h3>
           <div className="flex flex-col items-start justify-start gap-20 py-4 pr-20 sm:items-center md:flex-row">
             {amenities.roomFeatures.map((group, groupIndex) => (
               <ul key={groupIndex} className="space-y-4">

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const slides = [
   {
@@ -16,6 +17,7 @@ const slides = [
 ];
 
 export default function AboutUs() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -32,7 +34,7 @@ export default function AboutUs() {
   };
 
   const slideVariants = {
-    enter: (direction:number) => ({
+    enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
     }),
@@ -45,7 +47,7 @@ export default function AboutUs() {
         ease: "easeInOut",
       },
     },
-    exit: (direction:number) => ({
+    exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
       opacity: 1,
@@ -68,24 +70,15 @@ export default function AboutUs() {
           className="mb-4 transition-transform duration-300 hover:scale-105"
         />
         <h1 className="text-blue-500 font-[Zodiak] text-[48px]">
-          Biz haqimizda
+          {t("aboutus")}
         </h1>
         <p className="text-black sm:w-[540px] lg:w-[840px] leading-6 ">
-          Bizning mehmonxonamiz — shinamlik va qulaylik uyg'unlashgan maskan.
-          Mehmonlarimizga yuksak darajadagi xizmat ko'rsatish va unutilmas
-          tajriba ulashish bizning bosh maqsadimizdir. Zamonaviy dizayndagi
-          xonalarimiz, do'stona muhit va ehtiyotkor xizmatimiz bilan sizga huzur
-          bag'ishlaymiz. Har bir mehmon biz uchun alohida ahamiyatga ega.
-          Sizning istak va ehtiyojlaringizni inobatga olib, har bir tafsilotni
-          mukammal qilishga intilamiz. Ish safaringiz bo'ladimi yoki dam olish
-          uchun kelgan bo'lasizmi, bizning mehmonxonamizda siz o'zingizni uyda
-          his qilasiz. Kelgusidagi tashriflaringizni quvonch bilan kutib qolamiz
-          va sizga eng yaxshi dam olish imkoniyatini taqdim etishga tayyormiz!
+          {t("aboutusdesc")}
         </p>
         <a href="/booking">
           <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32  h-12 overflow-hidden px-10">
             <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-              Band qilish
+              {t("booknow")}
             </span>
             <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
           </Button>

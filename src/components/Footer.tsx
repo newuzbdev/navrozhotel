@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-blue-200">
       <div className="w-full max-w-screen-xl p-4 mx-auto">
@@ -11,13 +14,13 @@ export default function Footer() {
               className="mb-6 text-sm font-semibold text-blue-600 uppercase"
               id="#"
             >
-              Asosiy
+              {t("main")}
             </h2>
           </div>
           <div>
             <Link to="/rooms">
               <h2 className="mb-6 text-sm font-semibold text-blue-600 uppercase">
-                Xonalar
+                {t("rooms")}
               </h2>
             </Link>
           </div>
@@ -26,7 +29,7 @@ export default function Footer() {
               className="mb-6 text-sm font-semibold text-blue-600 uppercase"
               id="contactus"
             >
-              Boglanish
+              {t("contactus")}
             </h2>
           </div>
           <div>
@@ -34,23 +37,29 @@ export default function Footer() {
               className="mb-6 text-sm font-semibold text-blue-600 uppercase"
               id="aboutus"
             >
-              Biz haqimizda
+              {t("aboutus")}
             </h2>
           </div>
         </div>
         <div className="py-6">
           <div className="flex flex-col items-center justify-center space-y-2 md:flex-row md:space-x-10 md:space-y-0">
-            <div className="flex gap-2 text-blue-600">
-              <Phone className="text-blue-500" size={20} /> +998 68 228 49 11
+            <div className="flex gap-1 text-blue-600">
+              <Phone className="text-blue-500" size={20} /> +998 62 228 49 20
             </div>
-            <div className="flex space-x-2 text-blue-600">
+            <div className="flex gap-1 text-blue-600">
               <MapPin className="text-blue-500" size={20} />
-              Urganch sh. Nuri hayot 69
+              {t("address")}
             </div>
-            <div className="text-blue-600">infonavro'zhotel/@gmail.com</div>
+            <div className="flex gap-1 text-blue-600">
+              <Mail size={20} />
+              urganch_eltur@mail.ru
+            </div>
           </div>
           <div className="flex justify-center mt-4 space-x-5">
-            <a href="https://www.instagram.com/navruz_hotel" className="text-red-700 hover:cursor-pointer hover:text-red-700">
+            <a
+              href="https://www.instagram.com/navruz_hotel"
+              className="text-red-700 hover:cursor-pointer hover:text-red-700"
+            >
               <img src={"/images/instagram.svg"} alt="instagram" />
             </a>
             <a href="#" className="text-blue-900 hover:text-gray-700">

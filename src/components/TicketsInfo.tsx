@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
 
 export default function TicketsInfo() {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
     "/images/navrozaviakassa.jpg",
@@ -15,14 +17,12 @@ export default function TicketsInfo() {
       <div className="flex flex-col items-center gap-8">
         <div className="flex items-center justify-center">
           <h1 className="text-[32px] sm:text-4xl md:text-7xl lg:text-[48px] font-[Zodiak] text-blue-500">
-            Avia kassa
+            {t("planeTickets")}
           </h1>
         </div>
         <div className="flex items-center justify-center">
-          <p className="font-[Satoshi] text-[16px] leading-[24px] text-center sm:w-[340px] lg:w-[540px]">
-            "Navro'z mehmonxonasi basseyni sizni dam olishga chorlaydi!" Toza va
-            shinam muhitda suzishdan bahramand bo'ling, Qulay sharoit va sifatli
-            xizmat sizni kutmoqda.
+          <p className="font-[Satoshi] text-[20px] leading-[24px] text-center sm:w-[340px] lg:w-[540px]">
+            {t("planeDesc")}
           </p>
         </div>
 

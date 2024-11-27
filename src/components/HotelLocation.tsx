@@ -1,4 +1,5 @@
 import { CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 interface HotelLocationProps {
   id: number;
@@ -7,6 +8,7 @@ interface HotelLocationProps {
 }
 
 export default function HotelLocation() {
+  const { t } = useTranslation();
   const rooms: HotelLocationProps[] = [
     {
       id: 1,
@@ -38,7 +40,7 @@ export default function HotelLocation() {
         className="text-[30px] font-normal text-center mb-8 font-[Zodiak] mt-10 sm:text-4xl md:text-7xl lg:text-[48px]"
         style={{ color: "rgba(19, 99, 222, 1)" }}
       >
-        Mehmonxona joylashuvi
+        {t("hotelLocation")}
       </h1>
       <div className="grid gap-6">
         <div className="grid gap-6 md:grid-cols-2">

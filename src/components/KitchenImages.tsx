@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
 
 export default function KitchenImages() {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
     "/images/navrozoshxona1.jpg",
@@ -17,14 +19,12 @@ export default function KitchenImages() {
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-center">
           <h1 className="text-[32px] sm:text-4xl md:text-7xl lg:text-[48px] font-[Zodiak] text-blue-500">
-            Oshxona
+            {t("kitchen")}
           </h1>
         </div>
         <div className="flex items-center justify-center">
           <p className="font-[Satoshi] text-[16px] leading-[24px] text-center text-black sm:w-[340px] lg:w-[540px]">
-            Navro'z mehmonxonasi oshxonasi sizni dam olishga chorlaydi! Toza va
-            shinam muhitda taom zavqidan bahramand bo'ling. Qulay sharoit va
-            sifatli xizmat sizni kutmoqda.
+            {t("kitchenDesc")}
           </p>
         </div>
 

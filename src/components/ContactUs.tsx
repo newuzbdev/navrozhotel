@@ -5,9 +5,11 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [isRobot, setIsRobot] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -30,7 +32,7 @@ export default function ContactUs() {
     e.preventDefault();
 
     const botToken = "7583278821:AAHXt-z1Krs7H6TUUzpU_LOWRFiL_-OmKdk";
-    const chatId = "1109703005";
+    const chatId = "6492944610";
 
     const messageText = `
 Yangi xabar:
@@ -106,7 +108,7 @@ Yangi xabar:
                   onChange={handleInputChange}
                   id="firstName"
                   name="firstName"
-                  placeholder="Isim"
+                  placeholder={t("name")}
                   required
                 />
               </div>
@@ -118,7 +120,7 @@ Yangi xabar:
                   className="w-full h-[56px] sm:h-[60px] md:h-[65px] lg:h-[70px] placeholder:text-gray-400 placeholder:text-xl"
                   id="lastName"
                   name="lastName"
-                  placeholder="Familya"
+                  placeholder={t("familyName")}
                 />
               </div>
             </div>
@@ -147,7 +149,7 @@ Yangi xabar:
                 name="message"
                 rows={4}
                 required
-                placeholder="Xabar"
+                placeholder={t("message")}
                 className="h-[105px] placeholder:text-gray-400 placeholder:text-xl lg:h-[225px] md:h-[150px] "
               />
             </div>
@@ -161,7 +163,7 @@ Yangi xabar:
                   onChange={(e) => setIsRobot(e.target.checked)}
                   className="w-6 h-6 text-blue-600 border-gray-900 rounded focus:ring-blue-500"
                 />
-                <span className="text-gray-700">Men robot emasman</span>
+                <span className="text-gray-700">{t("captcha")}</span>
                 <div className="flex items-center ">
                   <img
                     src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
@@ -179,7 +181,7 @@ Yangi xabar:
                 className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32 h-12 overflow-hidden px-10"
               >
                 <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                  Yuborish
+                  {t("send")}
                 </span>
                 <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
               </Button>

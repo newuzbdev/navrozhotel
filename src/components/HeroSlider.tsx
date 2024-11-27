@@ -6,6 +6,7 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const slides = [
   {
@@ -20,6 +21,7 @@ const slides = [
 ];
 
 export default function HeroSlider() {
+  const { t } = useTranslation();
   return (
     <div className="relative w-full h-screen overflow-hidden" id="home">
       <Swiper
@@ -54,7 +56,7 @@ export default function HeroSlider() {
           </p>
         </h2>
         <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
-          Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
+          {t("description")}
         </p>
       </div>
     </div>

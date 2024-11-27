@@ -8,6 +8,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import AllRoomTypes from "@/components/AllRoomTypes";
+import { useTranslation } from "react-i18next";
 
 const slides = [
   {
@@ -22,6 +23,8 @@ const slides = [
 ];
 
 export default function Rooms() {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden ">
@@ -50,10 +53,10 @@ export default function Rooms() {
         </Swiper>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-6xl sm:text-6xl md:text-7xl lg:text-[110px] lg:leading-[90px] font-normal tracking-widest">
-            Xonalar
+            {t("rooms")}
           </h2>
           <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
-            Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
+            {t("description")}
           </p>
         </div>
       </div>

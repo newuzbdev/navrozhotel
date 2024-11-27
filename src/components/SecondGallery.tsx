@@ -1,19 +1,21 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 export default function SecondGallery() {
+  const { t } = useTranslation();
   return (
     <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {[
         {
           src: "/images/navrozaviakassa.jpg",
           alt: "Aviakassa",
-          text: "Aviakassa",
+          text: t("planeTickets"),
           link: "/ticket",
         },
         {
           src: "/images/navrozmassaj.jpg",
-          alt: "Sauna",
-          text: "Massaj",
+          alt: "Massaj",
+          text: t("massage"),
           link: "/massage",
         },
         {
@@ -53,7 +55,7 @@ export default function SecondGallery() {
                   width: "68px",
                   height: "85px",
                 }}
-                className="absolute top-4 right-[250px] z-10 hidden sm:hidden md:hidden lg:flex"
+                className="absolute top-4 right-[270px] z-10 hidden sm:hidden md:hidden lg:flex"
               />
             )}
           </NavLink>

@@ -4,8 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslation } from "react-i18next";
 
 export default function Faq() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex justify-center mt-20 ">
@@ -19,7 +21,7 @@ export default function Faq() {
                 color: "rgba(19, 99, 222, 1)",
               }}
             >
-              Tez-Tez So&apos;raladigan Savollar
+              {t("questions")}
             </h1>
           </div>
         </div>
@@ -35,28 +37,19 @@ export default function Faq() {
             className="px-6 py-2 border rounded-lg shadow-sm"
           >
             <AccordionTrigger className="flex justify-between hover:no-underline">
-              <span className="text-xl font-medium">
-                Mehmonxonaga kirish va chiqish vaqtlari qanday?
-              </span>
+              <span className="text-xl font-medium">{t("question1")}</span>
             </AccordionTrigger>
-            <AccordionContent className="pt-4">
-              Check-in va check-out vaqtlari mehmonxona qoidalariga muvofiq
-              belgilanadi.
-            </AccordionContent>
+            <AccordionContent className="pt-4">{t("answer1")}</AccordionContent>
           </AccordionItem>
           <AccordionItem
             value="item-2"
             className="px-6 py-2 border rounded-lg shadow-sm"
           >
             <AccordionTrigger className="flex justify-between hover:no-underline">
-              <span className="text-xl font-medium">
-                Mehmonxonada ovqatlanish imkoniyatlari bormi?
-              </span>
+              <span className="text-xl font-medium">{t("question2")}</span>
             </AccordionTrigger>
             <AccordionContent className="pt-4 ">
-              Ha, bizning restoranimiz har kuni ertalabdan kechgacha xizmat
-              ko&apos;rsatadi va turli xil milliy va xalqaro taomlarni taklif
-              etadi.
+              {t("answer2")}
             </AccordionContent>
           </AccordionItem>
           <AccordionItem
@@ -64,27 +57,18 @@ export default function Faq() {
             className="px-6 py-2 border rounded-lg shadow-sm"
           >
             <AccordionTrigger className="flex justify-between hover:no-underline">
-              <span className="text-xl font-medium">
-                Mehmonxona bepul Wi-Fi xizmatini taqdim etadimi?
-              </span>
+              <span className="text-xl font-medium">{t("question3")}</span>
             </AccordionTrigger>
-            <AccordionContent className="pt-4">
-              Ha, barcha xonalarda va umumiy joylarda bepul Wi-Fi mavjud.
-            </AccordionContent>
+            <AccordionContent className="pt-4">{t("answer3")}</AccordionContent>
           </AccordionItem>
           <AccordionItem
             value="item-4"
             className="px-6 py-2 border rounded-lg shadow-sm"
           >
             <AccordionTrigger className="flex justify-between hover:no-underline">
-              <span className="text-xl font-normal">
-                Mehmonxonaga yaqin diqqatga sazovor joylar bormi?
-              </span>
+              <span className="text-xl font-normal">{t("question4")}</span>
             </AccordionTrigger>
-            <AccordionContent className="pt-4">
-              Ha, mehmonxona markaziy joyda joylashgan va ko&apos;plab diqqatga
-              sazovor joylar yaqin masofada joylashgan.
-            </AccordionContent>
+            <AccordionContent className="pt-4">{t("answer4")}</AccordionContent>
           </AccordionItem>
         </Accordion>
       </>

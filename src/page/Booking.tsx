@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const slides = [
   {
@@ -17,6 +18,8 @@ const slides = [
 ];
 
 export default function Booking() {
+  const { t } = useTranslation();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -51,7 +54,7 @@ export default function Booking() {
     }
 
     const botToken = "7583278821:AAHXt-z1Krs7H6TUUzpU_LOWRFiL_-OmKdk";
-    const chatId = "1109703005";
+    const chatId = "6492944610";
     const text = `Yangi xabar
     
 Telefon raqami: +998${phoneNumber}
@@ -143,15 +146,15 @@ Bolalar: ${children}`;
       </AnimatePresence>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
-        <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[90px] font-normal tracking-widest mb-8">
-          Xona band qilish
+        <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[80px] lg:leading-[90px] font-normal tracking-widest mb-8">
+          {t("roomBooking")}
         </h2>
 
         <div className="w-full max-w-2xl p-5 space-y-8 rounded-lg bg-white/90">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="flex flex-col ">
               <label className="text-xl font-medium text-gray-700">
-                Telefon raqamingizni kiriting
+                {t("enterYourPhoneNumber")}
               </label>
 
               <div className="relative">
@@ -171,7 +174,7 @@ Bolalar: ${children}`;
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="flex flex-col ">
                 <label className="text-xl font-medium text-gray-700">
-                  Kelish sanasi
+                  {t("comingDate")}
                 </label>
                 <input
                   type="date"
@@ -184,7 +187,7 @@ Bolalar: ${children}`;
 
               <div className="flex flex-col ">
                 <label className="text-xl font-medium text-gray-700">
-                  Xona turi
+                  {t("roomTypes")}
                 </label>
                 <select
                   value={roomType}
@@ -193,18 +196,18 @@ Bolalar: ${children}`;
                   className="w-full px-4 py-4 text-gray-900 bg-white border border-gray-300 rounded appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="standart bir kishilik">
-                    Standart bir kishilik
+                    {t("standartOne")}
                   </option>
                   <option value="Standart ikki kishilik">
-                    Standart ikki kishilik
+                    {t("standartThree")}
                   </option>
                   <option value="Standart uch kishilik">
-                    Standart uch kishilik
+                    {t("standartThree")}
                   </option>
-                  <option value="deluxe">Deluxe Room</option>
+                  <option value="deluxe">Deluxe</option>
                   <option value="vip">Vip</option>
-                  <option value="vip bir kishilik">Vip bir kishilik</option>
-                  <option value="vip ikki kishilik">Vip ikki kishilik</option>
+                  <option value="vip bir kishilik">{t("vipOne")}</option>
+                  <option value="vip ikki kishilik">{t("vipTwo")}</option>
                 </select>
               </div>
             </div>
@@ -212,7 +215,7 @@ Bolalar: ${children}`;
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <div className="flex flex-col space-y-2">
                 <label className="text-xl font-medium text-gray-700">
-                  Kattalar
+                  {t("adults")}
                 </label>
 
                 <select
@@ -231,7 +234,7 @@ Bolalar: ${children}`;
 
               <div className="flex flex-col space-y-2">
                 <label className="text-xl font-medium text-gray-700">
-                  Bolalar
+                  {t("children")}
                 </label>
                 <select
                   value={children}
@@ -254,7 +257,7 @@ Bolalar: ${children}`;
                 className="bg-white text-black transition-all duration-300 ease-out border-black hover:border-white border rounded-full font-[Satoshi] flex items-center justify-center group relative w-32  h-12 overflow-hidden px-10 hover:bg-blue-400"
               >
                 <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                  Band qilish
+                  {t("booknow")}
                 </span>
                 <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
               </Button>

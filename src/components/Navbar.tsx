@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Star, Menu } from "lucide-react";
+import { MapPin, Phone, Star, Menu, Globe } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
@@ -9,9 +9,28 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 export default function Navbar() {
   const location = useLocation();
+
+  const { t } = useTranslation();
+  const [language, setLanguage] = useState("uz");
+
+  const handleChangeLanguage = (lang: string) => {
+    i18next.changeLanguage(lang);
+    setLanguage(lang);
+  };
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -45,16 +64,16 @@ export default function Navbar() {
   const NavLinks = () => (
     <nav className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
       {[
-        { href: "/", label: "Asosiy" },
-        { href: "/rooms", label: "Xonalar" },
+        { href: "/", label: t("main") },
+        { href: "/rooms", label: t("rooms") },
         {
           href: "#contactus",
-          label: "Bog'lanish",
+          label: t("contactus"),
           onClick: handleScrollToContactUs,
         },
         {
           href: "#aboutus",
-          label: "Biz haqimizda",
+          label: t("aboutus"),
           onClick: handleScrollToAboutUs,
         },
       ].map((link) => (
@@ -82,7 +101,7 @@ export default function Navbar() {
         <div className="items-center hidden lg:flex lg:gap-4">
           <span className="items-center hidden gap-1 p-2 text-white bg-blue-500 rounded-full lg:p-3 lg:flex">
             <Phone size={20} />
-            <span className="hidden lg:block">+998 68 228 49 11</span>
+            <span className="hidden lg:block">+998 62 228 49 11</span>
           </span>
         </div>
 
@@ -109,9 +128,37 @@ export default function Navbar() {
             className="hidden text-white cursor-pointer lg:block"
             onClick={handleMapClick}
           />
+          <>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Globe color="white" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>{t("chooseLanguage")}</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+
+                <DropdownMenuRadioGroup
+                  value={language}
+                  onValueChange={handleChangeLanguage}
+                >
+                  <DropdownMenuRadioItem value="en">
+                    English
+                  </DropdownMenuRadioItem>
+
+                  <DropdownMenuRadioItem value="ru">
+                    Русский
+                  </DropdownMenuRadioItem>
+
+                  <DropdownMenuRadioItem value="uz">
+                    O'zbek
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </>
           <Link to="/booking" className="hidden lg:block">
             <Button className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 lg:px-7 lg:py-6 rounded-full text-[14px] lg:text-[16px] hidden lg:flex">
-              Band qilish
+              {t("booknow")}
             </Button>
           </Link>
           <Sheet>
@@ -130,12 +177,12 @@ export default function Navbar() {
               <div className="mt-4 space-y-4">
                 <nav className="flex flex-col items-start gap-4">
                   {[
-                    { href: "/", label: "Asosiy" },
-                    { href: "/rooms", label: "Xonalar" },
-                    { href: "/booking", label: "Bog'lanish" },
+                    { href: "/", label: t("main") },
+                    { href: "/rooms", label: t("rooms") },
+                    { href: "/booking", label: t("contactus") },
                     {
                       href: "#aboutus",
-                      label: "Biz haqimizda",
+                      label: t("aboutus"),
                       onClick: handleScrollToAboutUs,
                     },
                   ].map((link) => (
@@ -154,7 +201,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-start gap-4 mt-4">
                   <div className="flex items-center gap-2">
                     <Phone className="text-blue-500" size={20} />
-                    <span className="text-gray-900">+998 68 228 49 11</span>
+                    <span className="text-gray-900">+998 62 228 49 11</span>
                   </div>
                   <div
                     className="flex items-center gap-2 hover:cursor-pointer"
@@ -164,7 +211,7 @@ export default function Navbar() {
                       className="text-blue-500 cursor-pointer"
                       size={20}
                     />
-                    <span className="text-gray-900">Bizning manzil</span>
+                    <span className="text-gray-900">{t("ourLocation")}</span>
                   </div>
                 </div>
               </div>

@@ -1,26 +1,25 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
 
 export default function MassageImages() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useTranslation();
   const images = ["/images/navrozmassaj.jpg"];
 
   return (
-    <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10 my-[86px]">
+    <div className="mx-4 sm:mx-8 md:mx-[120px]  my-[86px]">
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-center">
           <h1 className="text-[32px] sm:text-4xl md:text-7xl lg:text-[48px] font-[Zodiak] text-blue-500">
-            Massaj
+            {t("massage")}
           </h1>
         </div>
         <div className="flex items-center justify-center">
           {" "}
-          <p className="font-[Satoshi] text-[16px] leading-[24px] text-center sm:w-[340px] lg:w-[540px]">
-            "Navro'z mehmonxonasi massaj xizmati sizni dam olish va
-            tetiklanishga chorlaydi! Tinch va shinam muhitda professional
-            massajdan bahramand bo'ling. Qulay sharoit va sifatli xizmat sizni
-            kutmoqda."
+          <p className="font-[Satoshi] text-[18px] leading-[24px] text-center sm:w-[340px] lg:w-[540px]">
+            {t("massageDesc")}
           </p>
         </div>
 

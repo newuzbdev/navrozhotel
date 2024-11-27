@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
@@ -10,14 +11,14 @@ const slides = [
 ];
 
 export default function Gallery() {
+  const { t } = useTranslation();
   return (
     <div className="relative flex flex-col items-center h-full p-8 my-10 space-y-4 text-center">
       <h1 className="text-blue-500 font-[Zodiak] text-[54px] font-normal">
-        Galeriya
+        {t("gallery")}
       </h1>
       <p className="text-black sm:w-[540px] lg:w-[840px] leading-6">
-        Biz taklif qilayotgan go'zallik va qulaylikni o'rganish uchun
-        galereyamizga qarang.
+        {t("galleryDesc")}
       </p>
 
       <Swiper
@@ -51,8 +52,7 @@ export default function Gallery() {
 
       <div className="absolute hidden overflow-hidden lg:top-56 bottom-4 lg:w-full sm:block md:block">
         <div className="animate-marquee whitespace-nowrap text-8xl font-[Satoshi]">
-          Bizning Mehmonxona galereyamiz va bizning xizmatlarimiz haqida
-          batafsil ma'lumot.
+          {t("animateText")}
         </div>
       </div>
     </div>

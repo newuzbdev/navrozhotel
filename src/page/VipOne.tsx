@@ -1,4 +1,5 @@
 import VipOneRoom from "@/components/VipOneRoom";
+import { useTranslation } from "react-i18next";
 import {
   Autoplay,
   Navigation,
@@ -21,6 +22,7 @@ const slides = [
 ];
 
 export default function VipOne() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
@@ -49,13 +51,13 @@ export default function VipOne() {
         </Swiper>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
-            Bir kishilik VIP
+            {t("vipOne")}
             <p className="pt-6 text-4xl sm:text-4xl md:text-4xl lg:text-[90px] font-[Zodiak]">
-              Xona
+              {t("room")}
             </p>
           </h2>
           <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
-            Sizning sevimli joyingiz. Bizning oilaviy hikoyamiz.
+            {t("description")}
           </p>
         </div>
       </div>

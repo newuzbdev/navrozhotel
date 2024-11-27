@@ -16,8 +16,11 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function StandardRoom3() {
+  const { t } = useTranslation();
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
     "/images/rooms/navrozstandart3.jpg",
@@ -26,27 +29,27 @@ export default function StandardRoom3() {
     "/images/rooms/navrozstandart3all.jpg",
     "/images/rooms/navrozstandart3mirror.jpg",
   ];
-
   const amenities = {
     roomFeatures: [
       [
-        { icon: <Bath size={20} />, text: "Dush" },
+        { icon: <Bath size={20} />, text: t("shower") },
         {
           icon: (
             <img
               src={"/images/fen.svg"}
+              loading="lazy"
               width={20}
               height={20}
               alt="joy namoz"
             />
           ),
-          text: "Fen",
+          text: t("fen"),
         },
-        { icon: <Droplets size={20} />, text: "Issiq suv" },
+        { icon: <Droplets size={20} />, text: t("hotWater") },
       ],
       [
-        { icon: <Refrigerator size={20} />, text: "Muzlatgich" },
-        { icon: <Coffee size={20} />, text: "Nonushta" },
+        { icon: <Refrigerator size={20} />, text: t("refrigerator") },
+        { icon: <Coffee size={20} />, text: t("breakfast") },
         {
           icon: (
             <img
@@ -54,13 +57,14 @@ export default function StandardRoom3() {
               width={20}
               height={20}
               alt="joy namoz"
+              loading="lazy"
             />
           ),
-          text: "Joy namoz",
+          text: t("placeOfPrayer"),
         },
       ],
       [
-        { icon: <Tv size={20} />, text: "Televizor" },
+        { icon: <Tv size={20} />, text: t("television") },
         {
           icon: (
             <img
@@ -70,13 +74,13 @@ export default function StandardRoom3() {
               alt="Sochiqlar"
             />
           ),
-          text: "Sochiqlar",
+          text: t("towels"),
         },
-        { icon: <Footprints size={20} />, text: "Shippaklar" },
+        { icon: <Footprints size={20} />, text: t("slippers") },
       ],
       [
-        { icon: <Scissors size={20} />, text: "Saqol oladigan nabor" },
-        { icon: <Car size={20} />, text: "Taqsi chaqirib berish" },
+        { icon: <Scissors size={20} />, text: t("shaver") },
+        { icon: <Car size={20} />, text: t("taxiCall") },
         { icon: <Wifi size={20} />, text: "Wi-fi" },
       ],
     ],
@@ -86,7 +90,7 @@ export default function StandardRoom3() {
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-[32px]">Standart uch kishilik</h1>
+          <h1 className="text-[32px]">{t("standartThree")}</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
@@ -129,20 +133,11 @@ export default function StandardRoom3() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between mt-4 sm:flex-row">
-          <p
-            className="text-3xl font-medium sm:text-3xl"
-            style={{ color: "rgba(19, 99, 222, 1)" }}
-          >
-            660 000 000 so&apos;m{" "}
-            <span className="text-black text-base font-[Satoshi]">
-              bir kecha
-            </span>
-          </p>
+        <div className="flex flex-col items-center justify-end mt-4 sm:flex-row">
           <NavLink to={"/booking"}>
             <Button className="bg-white text-black transition-all duration-300 ease-out hover:border-white hover:bg-blue-500 border-black border rounded-full font-[Satoshi] flex items-center justify-center group relative w-full sm:w-32 h-12 overflow-hidden px-16">
               <span className="absolute transition-opacity duration-500 ease-out opacity-100 group-hover:opacity-0">
-                Band qilish
+                {t("booknow")}
               </span>
               <ChevronRight className="absolute text-white transition-all duration-500 ease-out transform translate-x-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
             </Button>
@@ -173,9 +168,7 @@ export default function StandardRoom3() {
         </Dialog>
 
         <div className="space-y-3">
-          <h3 className="text-3xl font-medium">
-            Sizni qanda kulayliklar kutyabdi
-          </h3>
+          <h3 className="text-3xl font-medium">{t("roomComfort")}</h3>
           <div className="flex flex-col items-start justify-start gap-20 py-4 pr-20 sm:items-center md:flex-row">
             {amenities.roomFeatures.map((group, groupIndex) => (
               <ul key={groupIndex} className="space-y-4">

@@ -1,4 +1,5 @@
-import MassageImages from "@/components/MassageImages";
+import StandardRoom4 from "@/components/StandartRoomFour";
+import StandardRoom3 from "@/components/StandartRoomFour";
 import { useTranslation } from "react-i18next";
 import {
   Autoplay,
@@ -8,19 +9,20 @@ import {
   Keyboard,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 const slides = [
   {
-    image: "/images/location/navrozmainlocation.jpg",
+    image: "/images/rooms/navrozstandart3.jpg",
   },
   {
-    image: "/images/navrozreseption.jpg",
+    image: "/images/rooms/navrozstandart3mirror.jpg",
   },
   {
-    image: "/images/navrozreception2.jpg",
+    image: "/images/rooms/navrozstandart3all.jpg",
   },
 ];
 
-export default function Massage() {
+export default function StandartRoom4() {
   const { t } = useTranslation();
   return (
     <>
@@ -50,12 +52,18 @@ export default function Massage() {
         </Swiper>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 max-w-[100%] px-6 sm:px-12">
           <h2 className="font-['Zodiak'] text-4xl sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[80px] font-normal tracking-widest">
-            {t("massage")}
+            {t("standartFour")}
+            <p className="pt-6 text-4xl sm:text-4xl md:text-4xl lg:text-[90px] font-[Zodiak]">
+              {t("room")}
+            </p>
           </h2>
+          <p className="font-['Zodiak'] text-lg sm:text-xl md:text-2xl lg:text-[20px] leading-8 sm:leading-10 font-medium py-5">
+            {t("description")}
+          </p>
         </div>
       </div>
       <div>
-        <MassageImages />
+        <StandardRoom4 />
       </div>
     </>
   );

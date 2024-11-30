@@ -19,6 +19,7 @@
      "standartOne":"Standart single room",
      "standartTwo":"Standart double room",
      "standartThree":"Standart triple room",
+     "standartFour":"Standart quadruple room",
      "questions": "Frequently asked questions",
      "question1":"What are the check-in and check-out times?",
      "question2":"Are there dining options at the hotel?",
@@ -63,5 +64,6 @@
      "planeDesc":"Navroz air ticket office invites you to use our services!  Plan your flight through fast and reliable services.  Comfortable conditions and quality service await you.",
      "massageDesc":"Navroz Hotel massage service invites you to relax and refresh! Enjoy a professional massage in a peaceful and relaxing environment. Comfortable conditions and quality service await you.",
      "saunaDesc":"Navroz hotel sauna invites you to relax!  Enjoy real presence in a clean and comfortable environment.  Comfortable conditions and quality service await you.",
-     "address":"13 building, Sherozi street,Urgench city"
+     "address":"13 building, Sherozi street,Urgench city",
+     "sauna":"Sauna"
     }

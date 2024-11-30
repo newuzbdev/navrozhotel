@@ -18,16 +18,16 @@ import {
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export default function StandardRoom3() {
+export default function StandardRoom4() {
   const { t } = useTranslation();
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const images = [
-    "/images/standartroom3.jpg",
-    "/images/rooms/standartroombath.jpg",
-    "/images/rooms/standartthreeroom.jpg",
-    "/images/standartroom3.jpg",
-    "/images/rooms/standart3image.jpg",
+    "/images/rooms/navrozstandart3.jpg",
+    "/images/rooms/navrozstandart3bath.jpg",
+    "/images/rooms/navrozstandart3all.jpg",
+    "/images/rooms/navrozstandart3all.jpg",
+    "/images/rooms/navrozstandart3mirror.jpg",
   ];
   const amenities = {
     roomFeatures: [
@@ -90,7 +90,7 @@ export default function StandardRoom3() {
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-10">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-[32px]">{t("standartThree")}</h1>
+          <h1 className="text-[32px]">{t("standartFour")}</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12">

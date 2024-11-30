@@ -8,13 +8,14 @@ import Pool from "@/page/Pool";
 import Rooms from "@/page/Rooms";
 import Sauna from "@/page/Sauna";
 import StandartRoomOne from "@/page/StandartOne";
-import StandartRoom3 from "@/page/StandartThree";
 import StandartRoom2 from "@/page/StandartTwo";
 import Ticket from "@/page/Ticket";
 import Vip from "@/page/Vip";
 import VipOne from "@/page/VipOne";
 import VipTwo from "@/page/VipTwo";
 import { createBrowserRouter } from "react-router-dom";
+import StandartRoom4 from "@/page/StandartFour";
+import StandartRoom3 from "@/page/StandartThree";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/standartthree",
         element: <StandartRoom3 />,
+      },
+      {
+        path: "/standartfour",
+        element: <StandartRoom4 />,
       },
       {
         path: "/booking",

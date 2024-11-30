@@ -11,13 +11,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const slides = [
   {
-    image: "/images/rooms/navrozstandart3.jpg",
+    image: "/images/standartroom3.jpg",
   },
   {
-    image: "/images/rooms/navrozstandart3mirror.jpg",
+    image: "/images/rooms/standartthreeroom.jpg",
   },
   {
-    image: "/images/rooms/navrozstandart3all.jpg",
+    image: "/images/rooms/standart3image.jpg",
   },
 ];
 

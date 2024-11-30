@@ -23,7 +23,7 @@ export default function KitchenImages() {
           </h1>
         </div>
         <div className="flex items-center justify-center">
-          <p className="font-[Satoshi] text-[16px] leading-[24px] text-center text-black sm:w-[340px] lg:w-[540px]">
+          <p className="text-[16px] leading-[24px] text-center text-black sm:w-[340px] lg:w-[540px]">
             {t("kitchenDesc")}
           </p>
         </div>

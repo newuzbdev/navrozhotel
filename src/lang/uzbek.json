@@ -19,6 +19,7 @@
     "standartOne":"Standart bir kishilik",
     "standartTwo":"Standart ikki kishilik",
     "standartThree":"Stadart uch kishilik",
+    "standartFour":"Standart to'rt kishilik",
     "questions":"Tez-tez So'raladigan Savollar",
     "question1":"Mehmonxonaga kirish va chiqish vaqtlari qanday?",
     "question2":"Mehmonxonada ovqatlanish imkoniyatlari bormi?",
@@ -65,5 +66,6 @@
     "massageDesc":"Navro'z mehmonxonasi massaj xizmati sizni dam olish va tetiklanishga chorlaydi! Tinch va shinam muhitda professional massajdan bahramand bo'ling. Qulay sharoit va sifatli xizmat sizni kutmoqda.",
     "saunaDesc":"“Navro'z mehmonxonasi saunasi sizni dam olishga chorlaydi!  Toza va shinam muhitda haqiqiy huzurdan bahramand bo'ling.  Qulay sharoit va sifatli xizmat sizni kutmoqda.",
     "ourLocation":"Bizning manzil",
-    "address":"Urganch shahri,Sherozi ko'chasi 13-bino"
+    "address":"Urganch shahri,Sherozi ko'chasi 13-bino",
+    "sauna":"Sauna"
 }

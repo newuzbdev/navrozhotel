@@ -13,10 +13,10 @@ const slides = [
     image: "/images/location/navrozmainlocation.jpg",
   },
   {
-    image: "/images/navrozslider3.jpg",
+    image: "/images/navrozreseption.jpg",
   },
   {
-    image: "/images/navrozslider.jpg",
+    image: "/images/navrozreception2.jpg",
   },
 ];
 

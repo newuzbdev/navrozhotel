@@ -199,10 +199,13 @@ Bolalar: ${children}`;
                     {t("standartOne")}
                   </option>
                   <option value="Standart ikki kishilik">
-                    {t("standartThree")}
+                    {t("standartTwo")}
                   </option>
                   <option value="Standart uch kishilik">
                     {t("standartThree")}
+                  </option>
+                  <option value="Standart tor't kishilik">
+                    {t("standartFour")}
                   </option>
                   <option value="deluxe">Deluxe</option>
                   <option value="vip">Vip</option>

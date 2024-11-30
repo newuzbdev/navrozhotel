@@ -19,8 +19,13 @@ export default function AllRoomTypes() {
     },
     {
       title: t("standartThree"),
+      image: "/images/standartroom3.jpg",
+      slug: "standartThree",
+    },
+    {
+      title: t("standartFour"),
       image: "/images/rooms/navrozstandart3.jpg",
-      slug: "standartthree",
+      slug: "standartFour",
     },
     {
       title: "Deluxe",

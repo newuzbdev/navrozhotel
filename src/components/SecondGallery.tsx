@@ -21,7 +21,7 @@ export default function SecondGallery() {
         {
           src: "/images/navrozsauna.jpg",
           alt: "Sauna",
-          text: "Sauna",
+          text: t("sauna"),
           link: "/sauna",
         },
       ].map((item, index) => (

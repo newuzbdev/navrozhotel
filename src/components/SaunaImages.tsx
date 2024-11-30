@@ -18,7 +18,7 @@ export default function SaunaImages() {
     <div className="mx-4 sm:mx-8 md:mx-[120px] pt-5">
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-center">
-          <h1 className="text-[32px]">Sauna</h1>
+          <h1 className="text-[32px]">{t("sauna")}</h1>
         </div>
         <div className="flex items-center justify-center">
           {" "}

@@ -1,5 +1,4 @@
 import StandardRoom4 from "@/components/StandartRoomFour";
-import StandardRoom3 from "@/components/StandartRoomFour";
 import { useTranslation } from "react-i18next";
 import {
   Autoplay,
